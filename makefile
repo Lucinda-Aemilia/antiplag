@@ -1,2 +1,2 @@
-hello.exe: helloworld.cpp
-	g++ helloworld.cpp -o hello.exe
+antiplag.exe: Main.cpp FileManagement.h
+	g++ Main.cpp -o antiplag.exe
