@@ -1,5 +1,6 @@
 #pragma once
 
 #include "Settings.h"
-
-#include "FileManagement.h"
+#include "Pattern.h"
+#include "Document.h"
+#include "PatternTree.h"

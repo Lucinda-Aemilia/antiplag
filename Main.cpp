@@ -1,24 +1,16 @@
 #include "antiplag.h"
+
 #include <iostream>
 
-int main(int argc, char** argv)
+int main()
 {
-	#ifdef DEBUG
+	Document doc1("testcase\\any.cc");
+	Document doc2("testcase\\map_field.cc");
+	Document doc3("testcase\\service.cc");
 	
-	std::cout << "Arguments: " << argc << std::endl;
+	doc1.RabinKarp();
 	
-	for (int i = 0; i < argc; i++)
-	{
-		std::cout << argv[i] << std::endl;
-	}
-	
-	#endif // DEBUG
-	
-	// let argv[1] be the path
-	
-	FileManagement f;
-	f.findSingle("testcase");
-	// C:\\Users\\lenovo\\Documents\\OOP_programming\\Team_Project\\testcase
-	
+	PatternTree::instance()->destroy();
+	// Seems we cannot call that
 	return 0;
 }
