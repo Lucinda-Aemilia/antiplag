@@ -4,3 +4,4 @@
 #include "Pattern.h"
 #include "Document.h"
 #include "PatternTree.h"
+#include "FileManagement.h"

@@ -3,7 +3,7 @@
 #include <random>
 #include <map>
 
-#define DEBUG
+// #define DEBUG
 
 extern int randWithRange(int lo, int hi);
 

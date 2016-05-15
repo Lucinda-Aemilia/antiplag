@@ -1,3 +1,5 @@
+#pragma once
+
 #include "Settings.h"
 #include <iostream>
 #include <io.h>
