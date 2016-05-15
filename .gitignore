@@ -216,6 +216,6 @@ pip-log.txt
 .mr.developer.cfg
 
 #Basic C++ programs
-.o
-.a
-.exe
+*.o
+*.a
+*.exe
