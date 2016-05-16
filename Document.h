@@ -28,10 +28,8 @@ protected:
 	
 private:
 
-	Document(const Document& other);
+	// Document(const Document& other);
 	Document& operator = (const Document& other);
-	
-	
 	
 	std::string m_address;
 	std::string m_content;

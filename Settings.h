@@ -2,11 +2,20 @@
 
 #include <random>
 #include <map>
+#include <string>
+#include <ostream>
 
-// #define DEBUG
+#define DEBUG
 
 extern int randWithRange(int lo, int hi);
 
-const int RK_MOD = 1e6 + 7;
+extern const int RK_MOD;
 
-const int RK_BASE = 97;
+extern const int RK_BASE;
+
+/// Note: to realize output here; a singleton of ofstream object
+// std::ofstream apout("log.txt");
+
+extern const std::string TYPE[];
+
+extern const int TYPE_COUNT;

@@ -53,5 +53,8 @@ void PatternTree::destroy()
 {
 	if (m_instance != NULL) delete m_instance;
 	m_instance = NULL;
+	
+	#ifdef DEBUG
 	std::cout << "Destroying the instance of PatternTree" << std::endl;
+	#endif // DEBUG
 }
