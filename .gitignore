@@ -219,3 +219,8 @@ pip-log.txt
 *.o
 *.a
 *.exe
+manual/*.aux
+manual/*.log
+manual/*.out
+manual/*.synctex
+manual/*.toc
