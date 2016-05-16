@@ -6,6 +6,9 @@
 int randWithRange(int lo, int hi)
 {
 	static std::default_random_engine rd(time(0));
+	// Still need to think about handling exception here 
+	if (lo > hi)
+		std::swap(lo, hi);
 	return rd() % (hi+1-lo) + lo;
 }
 
@@ -14,3 +17,4 @@ extern const int RK_BASE = 97;
 
 extern const std::string TYPE[] = {".cc", ".cpp", ".cxx", ".h"};
 extern const int TYPE_COUNT = 4;
+

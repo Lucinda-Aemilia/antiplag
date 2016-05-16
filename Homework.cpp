@@ -24,9 +24,9 @@ bool Homework::findSingle(std::string filePath)
 	std::string find;
 	
 	#ifdef DEBUG
-	std::cout << "\n********************************************************************************\n\n" ;
-	std::cout << "Single file mode: " << std::endl;
-	std::cout << "Searching for path: " << filePath << std::endl;
+	debugout << "\n********************************************************************************\n\n" ;
+	debugout << "Single file mode: " << std::endl;
+	debugout << "Searching for path: " << filePath << std::endl;
 	#endif // DEBUG
 	
 	_finddata_t fileInfo;
@@ -58,12 +58,12 @@ bool Homework::findSingle(std::string filePath)
 		if (!find)
 			continue;
 		
-		address[0] = (filePath + "\\" + name);
+		address[0] = filePath + "\\" + name;
 		
 		#ifdef DEBUG
-		std::cout << "\n********************************************************************************\n\n" ;
-		std::cout << "Processing: " << fileInfo.name << std::endl;
-		std::cout << "Address = " << address[0] << std::endl;
+		debugout << "\n********************************************************************************\n\n" ;
+		debugout << "Processing: " << fileInfo.name << std::endl;
+		debugout << "Address = " << address[0] << std::endl;
 		#endif // DEBUG
 		
 		m_projects.push_back(Project(filePath, address));

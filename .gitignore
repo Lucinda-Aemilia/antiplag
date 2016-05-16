@@ -224,3 +224,4 @@ manual/*.log
 manual/*.out
 manual/*.synctex
 manual/*.toc
+log.txt

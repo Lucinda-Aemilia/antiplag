@@ -29,8 +29,8 @@ Document::Document(std::string address) : m_address(address)
 	}
 	
 	#ifdef DEBUG
-	std::cout << std::endl << "********************************************************************************\n" << std::endl;
-	std::cout << "Document address: " << m_address << std::endl << std::endl;
+	debugout << std::endl << "********************************************************************************\n" << std::endl;
+	debugout << "Document address: " << m_address << std::endl << std::endl;
 	// std::cout << "Content before prepossing" << std::endl << m_content << std::endl;
 	#endif // DEBUG
 	
@@ -43,14 +43,15 @@ Document::Document(std::string address) : m_address(address)
 	makePattern();
 	
 	#ifdef DEBUG
-	std::cout << "Patterns made:" << std::endl;
+	debugout << "Patterns made:" << std::endl;
 	for (int i = 0; i < m_patterns.size(); i++)
 		m_patterns[i].print();
-	std::cout << std::endl;
+	debugout << std::endl;
 	#endif // DEBUG
 	
 	for (int i = 0; i < m_patterns.size(); i++)
 		PatternTree::instance()->insert(m_patterns[i]);
+	
 	#ifdef DEBUG
 	PatternTree::instance()->print();
 	#endif // DEBUG
@@ -97,9 +98,9 @@ void Document::RabinKarp()
 	std::vector<Pattern> patternList(PatternTree::instance()->getAll());
 	
 	#ifdef DEBUG
-	std::cout << std::endl << "********************************************************************************\n" << std::endl;
-	std::cout << "Rabin-Karp algorithm" << std::endl;
-	std::cout << "File path: " << m_address << std::endl;
+	debugout << std::endl << "********************************************************************************\n" << std::endl;
+	debugout << "Rabin-Karp algorithm" << std::endl;
+	debugout << "File path: " << m_address << std::endl;
 	/*
 	for (int i = 0; i < patternList.size(); i++)
 		patternList[i].print();
@@ -109,9 +110,9 @@ void Document::RabinKarp()
 	for (int i = 0; i < patternList.size(); i++)
 	{
 		#ifdef DEBUG
-		std::cout << "Checking Pattern: " << std::endl << "  ";
+		debugout << "Checking Pattern: " << std::endl << "  ";
 		patternList[i].print();
-		std::cout << "  Parent file: " << patternList[i].getParDocument()->getAddress() << std::endl;
+		debugout << "  Parent file: " << patternList[i].getParDocument()->getAddress() << std::endl;
 		#endif // DEBUG
 		
 		int length = patternList[i].getLength();
@@ -131,8 +132,8 @@ void Document::RabinKarp()
 			if (hash == patternList[i].getHash())
 			{
 				#ifdef DEBUG
-				std::cout << "  *Detected pattern in this document" << std::endl;
-				std::cout << "    position: " << j << std::endl;
+				debugout << "  *Detected pattern in this document" << std::endl;
+				debugout << "    position: " << j << std::endl;
 				#endif // DEBUG
 			}
 			hash -= (int)m_content[j] * pow;
@@ -150,17 +151,17 @@ void Document::KMP()
 	std::vector<Pattern> patternList(PatternTree::instance()->getAll());
 	
 	#ifdef DEBUG
-	std::cout << std::endl << "********************************************************************************\n" << std::endl;
-	std::cout << "KMP algorithm" << std::endl;
-	std::cout << "File path: " << m_address << std::endl;
+	debugout << std::endl << "********************************************************************************\n" << std::endl;
+	debugout << "KMP algorithm" << std::endl;
+	debugout << "File path: " << m_address << std::endl;
 	#endif //DEBUG
 	
 	for (int i = 0; i < patternList.size(); i++)
 	{
 		#ifdef DEBUG
-		std::cout << "Checking Pattern: " << std::endl << "  ";
+		debugout << "Checking Pattern: " << std::endl << "  ";
 		patternList[i].print();
-		std::cout << "  Parent file: " << patternList[i].getParDocument()->getAddress() << std::endl;
+		debugout << "  Parent file: " << patternList[i].getParDocument()->getAddress() << std::endl;
 		#endif // DEBUG
 		
 		std::string pattern(patternList[i].getPattern());
@@ -169,7 +170,7 @@ void Document::KMP()
 		
 		char* str = new char[m_content.length()];
 		strcpy(str, m_content.c_str());
-		// std::cout << str << std::endl;
+		// debugout << str << std::endl;
 		int last = 0;
 		while (last < m_content.length())
 		{
@@ -178,8 +179,8 @@ void Document::KMP()
 			else
 			{
 				#ifdef DEBUG
-				std::cout << "  *Detected pattern in this document" << std::endl;
-				std::cout << "    position: " << (int)(occ - str) << std::endl;
+				debugout << "  *Detected pattern in this document" << std::endl;
+				debugout << "    position: " << (int)(occ - str) << std::endl;
 				#endif // DEBUG
 				last = occ - str + 1;
 			}

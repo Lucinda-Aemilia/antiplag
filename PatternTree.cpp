@@ -7,7 +7,7 @@ PatternTree* PatternTree::m_instance = NULL;
 PatternTree::PatternTree()
 {
 	#ifdef DEBUG
-	std::cout << "Constructing an instance of PatternTree" << std::endl;
+	debugout << "Constructing an instance of PatternTree" << std::endl;
 	#endif // DEBUG
 }
 
@@ -46,7 +46,9 @@ std::vector<Pattern> PatternTree::getAll()
 
 void PatternTree::print()
 {
-	std::cout << "Number of patterns in the tree: " << m_tree.size() << std::endl;
+	#ifdef DEBUG
+	debugout << "Number of patterns in the tree: " << m_tree.size() << std::endl;
+	#endif // DEBUG
 }
 
 void PatternTree::destroy()
@@ -55,6 +57,6 @@ void PatternTree::destroy()
 	m_instance = NULL;
 	
 	#ifdef DEBUG
-	std::cout << "Destroying the instance of PatternTree" << std::endl;
+	debugout << "Destroying the instance of PatternTree" << std::endl;
 	#endif // DEBUG
 }

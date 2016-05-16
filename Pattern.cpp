@@ -10,7 +10,9 @@ Pattern::Pattern(Document& parDocument, std::string pattern, int pos):
   
 void Pattern::print() const
 {
-	std::cout << "Position=" << m_pos << " Hash=" << m_hash <<  " Content=" << m_pattern << std::endl;
+	#ifdef DEBUG
+	debugout << "Position=" << m_pos << " Hash=" << m_hash <<  " Content=" << m_pattern << std::endl;
+	#endif // DEBUG
 }
 
 void Pattern::calcHash()
