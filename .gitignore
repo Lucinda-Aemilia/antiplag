@@ -216,12 +216,12 @@ pip-log.txt
 .mr.developer.cfg
 
 #Basic C++ programs
-*.o
-*.a
-*.exe
-manual/*.aux
-manual/*.log
-manual/*.out
-manual/*.synctex
-manual/*.toc
-log.txt
+src/*.o
+src/*.a
+src/*.exe
+src/log.txt
+doc/*.aux
+doc/*.log
+doc/*.out
+doc/*.synctex
+doc/*.toc
