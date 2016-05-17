@@ -22,15 +22,19 @@ void cleanUp()
 	#ifdef DEBUG
 		#ifdef DEBUG_LOGFILE
 		// debugout.close();
+		std::ofstream logout("log.txt");
+		logout << debugout.str() << std::endl;
+		logout.close();
 		#endif // DEBUG_LOGFILE
 	#endif // DEBUG
 }
 
 #ifdef DEBUG
 	#ifdef DEBUG_LOGFILE
-	std::ofstream debugout;
-	debugout.open("log.txt", std::ios::out);
+	// std::ofstream debugout;
 	// debugout.open("log.txt", std::ios::out);
+	// debugout.open("log.txt", std::ios::out);
+	std::stringstream debugout;
 	#else
 	std::ostream& debugout = std::cout;
 	#endif // DEBUG_LOGFILE
