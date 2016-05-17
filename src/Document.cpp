@@ -59,16 +59,75 @@ Document::Document(std::string address) : m_address(address)
 	fin.close();
 }
 
+/// Make the patterns with winnowing algorithm
 void Document::makePattern()
 {
-	// algorithm: ramdomly choose 10-20 patterns, each with length 10-20
-	int count_pattern = randWithRange(10, 20);
-	for (int i = 0; i < count_pattern; i++)
+	if (m_content.length() < PATTERN_LENGTH)
+		return;
+	// NOTE: maybe need to think twice here about the sentinel value
+	int min_pos = 0; // the place where the minimal hash value lies
+	int right_end = 0; // the right end of the window
+	int global_right_pos = 0; // the position of the end of vurrent pattern in m_content
+	int hashWindow[WINDOW_LENGTH];
+	
+	// Initialize the hashes to maximum.
+	for (int i = 0; i < WINDOW_LENGTH; i++)
+		hashWindow[i] = INT_MAX;
+	
+	// calculate the first hash value
+	hashWindow[0] = 0;
+	for (int i = 0; i < PATTERN_LENGTH; i++)
 	{
-		int length = randWithRange(10, 20);
-		int pos = randWithRange(0, m_content.length());
-		if (pos + length >= m_content.length()) length = m_content.length() - pos;
-		m_patterns.push_back(Pattern((*this), m_content.substr(pos, length), pos));
+		hashWindow[0] *= RK_BASE;
+		hashWindow[0] += (int)m_content[i];
+		hashWindow[0] %= RK_MOD;
+	}
+	global_right_pos = PATTERN_LENGTH;
+	
+	// NOTE: still need to think about whether to do that or not
+	// calculates the next WINDOW_LENGTH-1 hash values
+	// for (int i = 1; i < WINDOW_LENGTH && i < m_content.length(); i++)
+		
+	// Begin rolling the window
+	while (global_right_pos < m_content.length())
+	{
+		global_right_pos++;
+		int next_hash = hashWindow[right_end];
+		// get the next hash value
+		next_hash -= (int)m_content[global_right_pos - PATTERN_LENGTH] * RK_BASE_POW;
+		next_hash = (next_hash * RK_BASE + (int)m_content[global_right_pos]) % RK_MOD;
+		next_hash = (next_hash + RK_MOD) % RK_MOD;
+		
+		right_end = (right_end + 1) % WINDOW_LENGTH;
+		hashWindow[right_end] = next_hash;
+		
+		if (min_pos == right_end)
+		{
+			// The previous minimum is no longer in this
+			// window. Scan hashWindow leftward starting from r
+			// for the rightmost minimal hash.
+			for (int i = (right_end-1+WINDOW_LENGTH) % WINDOW_LENGTH;
+			  i != right_end; i = (i-1+WINDOW_LENGTH) % WINDOW_LENGTH)
+				if (hashWindow[i] < hashWindow[min_pos]) min_pos = i;
+				
+			// calculate the pattern and insert it ***
+			// !!! Please check it carefully!
+			int start_pos = (right_end - min_pos + WINDOW_LENGTH) % WINDOW_LENGTH;
+			start_pos = global_right_pos - PATTERN_LENGTH -start_pos;
+			m_patterns.push_back(Pattern((*this), m_content.substr(start_pos, PATTERN_LENGTH), start_pos));
+		}
+		else
+		{
+			// Otherwise, the previous minimum is still in
+			// this window. Compare against the new value
+			// and update min if necessary.
+			if (hashWindow[right_end] <= hashWindow[min_pos])
+			{
+				min_pos = right_end;
+				int start_pos = global_right_pos - PATTERN_LENGTH;
+				m_patterns.push_back(Pattern((*this), m_content.substr(start_pos, PATTERN_LENGTH), start_pos));
+			}
+		}
 	}
 }
 

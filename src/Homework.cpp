@@ -24,7 +24,7 @@ bool Homework::findSingle(std::string filePath)
 	std::string find;
 	
 	#ifdef DEBUG
-	debugout << "\n********************************************************************************\n\n" ;
+	debugout << "\n********************************SINGLE MODE*************************************\n\n" ; // SINGLE MODE
 	debugout << "Single file mode: " << std::endl;
 	debugout << "Searching for path: " << filePath << std::endl;
 	#endif // DEBUG
@@ -71,13 +71,23 @@ bool Homework::findSingle(std::string filePath)
 	} while (_findnext(handle, &fileInfo) == 0);		
 	
 	_findclose(handle);
-
+	
+	#ifdef DEBUG
+	debugout << "\n********************************SINGLE MODE END*********************************\n\n" ;
+	#endif // DEBUG
+	
 	return true;
 }
 
 
 bool Homework::findMultiple(std::string filePath)
 {
+	#ifdef DEBUG
+	debugout << "\n*********************MULTIPLE FILE MODE*****************************************\n\n" ;
+	debugout << "Multiple file mode: " << std::endl;
+	debugout << "Searching for path: " << filePath << std::endl;
+	#endif // DEBUG
+	
 	_finddata_t fileInfo;
     std::string strfind = filePath + "\\*";
     long Handle = _findfirst(strfind.c_str(), &fileInfo);
@@ -104,6 +114,10 @@ bool Homework::findMultiple(std::string filePath)
     } while (_findnext(Handle, &fileInfo) == 0);
 
     _findclose(Handle);
+	
+	#ifdef DEBUG
+	debugout << "\n*********************MULTIPLE FILE MODE END*************************************\n\n" ;
+	#endif // DEBUG
 	
 	return true;
 }

@@ -4,12 +4,23 @@
 #include <fstream>
 #include <ctime>
 
+int ans = 1;
+
 void Initialize()
 {
+	// Initialize RK_BASE_POW
+	for (int i = 1; i < PATTERN_LENGTH; i++)
+	{
+		ans *= RK_BASE;
+		ans %= RK_MOD;
+	}
+	
 	// For cleaning up the contents in log.txt
 	std::ofstream logout("log.txt");
 	logout.close();
 }
+
+extern const int RK_BASE_POW = ans;
 
 void cleanUp()
 {
@@ -44,8 +55,8 @@ int main()
 {
 	Initialize();
 	
-	Homework hw1("testcase", Homework::Single);
-	Homework hw2("testcase", Homework::Multiple);
+	Homework hw1("..\\testcase", Homework::Single);
+	Homework hw2("..\\testcase", Homework::Multiple);
 	
 	cleanUp();
 	
