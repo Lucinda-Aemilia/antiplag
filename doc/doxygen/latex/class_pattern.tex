@@ -1,0 +1,233 @@
+\hypertarget{class_pattern}{}\section{Pattern Class Reference}
+\label{class_pattern}\index{Pattern@{Pattern}}
+
+
+Storing patterns from a document.  
+
+
+
+
+Collaboration diagram for Pattern\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{class_pattern__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_pattern_ada73ecc1fc5e4d94f30a8161feef67cf}{Pattern} (\hyperlink{class_document}{Document} \&par\+Document, std\+::string pattern, int pos)
+\begin{DoxyCompactList}\small\item\em The only constructor. \end{DoxyCompactList}\item 
+bool \hyperlink{class_pattern_a157a34771b4c550a7cf528f09fa685b5}{operator$<$} (const \hyperlink{class_pattern}{Pattern} \&right)
+\begin{DoxyCompactList}\small\item\em operator $<$ for inserting into \hyperlink{class_pattern_tree}{Pattern\+Tree} \end{DoxyCompactList}\item 
+long long int \hyperlink{class_pattern_ab6c1a23c63162c8e9bc27061e9370ed1}{get\+Hash} () const 
+\item 
+int \hyperlink{class_pattern_a371d9dad975d97190b969ee6e77178c0}{get\+Length} () const 
+\item 
+\hyperlink{class_document}{Document} $\ast$ \hyperlink{class_pattern_aba85629c60347a4f3c81bd7088af4c55}{get\+Par\+Document} ()
+\item 
+std\+::string \hyperlink{class_pattern_ad4f3ad6d391eea8c6fd95efdf7f7246d}{get\+Pattern} () const 
+\item 
+void \hyperlink{class_pattern_a44a70e6aff49a25fa068487e3d9f0fa3}{print} () const 
+\begin{DoxyCompactList}\small\item\em print basic information about the pattern \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_pattern_a8c7f0e27f620c00de00d097c84e9d6c3}{calc\+Hash} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_pattern}{Pattern} \& \hyperlink{class_pattern_a69f59394d218d0e476ef9259130e6bef}{operator=} (const \hyperlink{class_pattern}{Pattern} \&other)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_pattern_a492ef4124f2dfebee1babe983cf3f726}{m\+\_\+pattern}
+\item 
+int \hyperlink{class_pattern_aa5b42830eafc550988e9156e4c370f67}{m\+\_\+pos}
+\item 
+long long int \hyperlink{class_pattern_ad2d90cf1c416dd89f29e7da860a02bfb}{m\+\_\+hash}
+\item 
+\hyperlink{class_document}{Document} $\ast$ \hyperlink{class_pattern_a3ce8a1a5ba37412027278315935c06b8}{m\+\_\+par\+Document}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Storing patterns from a document. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Pattern@{Pattern}!Pattern@{Pattern}}
+\index{Pattern@{Pattern}!Pattern@{Pattern}}
+\subsubsection[{\texorpdfstring{Pattern(\+Document \&par\+Document, std\+::string pattern, int pos)}{Pattern(Document &parDocument, std::string pattern, int pos)}}]{\setlength{\rightskip}{0pt plus 5cm}Pattern\+::\+Pattern (
+\begin{DoxyParamCaption}
+\item[{{\bf Document} \&}]{par\+Document, }
+\item[{std\+::string}]{pattern, }
+\item[{int}]{pos}
+\end{DoxyParamCaption}
+)}\hypertarget{class_pattern_ada73ecc1fc5e4d94f30a8161feef67cf}{}\label{class_pattern_ada73ecc1fc5e4d94f30a8161feef67cf}
+
+
+The only constructor. 
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{class_pattern_ada73ecc1fc5e4d94f30a8161feef67cf_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Pattern@{Pattern}!calc\+Hash@{calc\+Hash}}
+\index{calc\+Hash@{calc\+Hash}!Pattern@{Pattern}}
+\subsubsection[{\texorpdfstring{calc\+Hash()}{calcHash()}}]{\setlength{\rightskip}{0pt plus 5cm}void Pattern\+::calc\+Hash (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_pattern_a8c7f0e27f620c00de00d097c84e9d6c3}{}\label{class_pattern_a8c7f0e27f620c00de00d097c84e9d6c3}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{class_pattern_a8c7f0e27f620c00de00d097c84e9d6c3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Pattern@{Pattern}!get\+Hash@{get\+Hash}}
+\index{get\+Hash@{get\+Hash}!Pattern@{Pattern}}
+\subsubsection[{\texorpdfstring{get\+Hash() const }{getHash() const }}]{\setlength{\rightskip}{0pt plus 5cm}long long int Pattern\+::get\+Hash (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_pattern_ab6c1a23c63162c8e9bc27061e9370ed1}{}\label{class_pattern_ab6c1a23c63162c8e9bc27061e9370ed1}
+\begin{DoxyReturn}{Returns}
+The hash value. 
+\end{DoxyReturn}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pattern_ab6c1a23c63162c8e9bc27061e9370ed1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Pattern@{Pattern}!get\+Length@{get\+Length}}
+\index{get\+Length@{get\+Length}!Pattern@{Pattern}}
+\subsubsection[{\texorpdfstring{get\+Length() const }{getLength() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Pattern\+::get\+Length (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_pattern_a371d9dad975d97190b969ee6e77178c0}{}\label{class_pattern_a371d9dad975d97190b969ee6e77178c0}
+\begin{DoxyReturn}{Returns}
+the length of the pattern. 
+\end{DoxyReturn}
+\index{Pattern@{Pattern}!get\+Par\+Document@{get\+Par\+Document}}
+\index{get\+Par\+Document@{get\+Par\+Document}!Pattern@{Pattern}}
+\subsubsection[{\texorpdfstring{get\+Par\+Document()}{getParDocument()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Document}$\ast$ Pattern\+::get\+Par\+Document (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_pattern_aba85629c60347a4f3c81bd7088af4c55}{}\label{class_pattern_aba85629c60347a4f3c81bd7088af4c55}
+\begin{DoxyReturn}{Returns}
+the address of the parent document. Note\+: need to use const here 
+\end{DoxyReturn}
+\index{Pattern@{Pattern}!get\+Pattern@{get\+Pattern}}
+\index{get\+Pattern@{get\+Pattern}!Pattern@{Pattern}}
+\subsubsection[{\texorpdfstring{get\+Pattern() const }{getPattern() const }}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Pattern\+::get\+Pattern (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_pattern_ad4f3ad6d391eea8c6fd95efdf7f7246d}{}\label{class_pattern_ad4f3ad6d391eea8c6fd95efdf7f7246d}
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{class_pattern_ad4f3ad6d391eea8c6fd95efdf7f7246d_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Pattern@{Pattern}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!Pattern@{Pattern}}
+\subsubsection[{\texorpdfstring{operator$<$(const Pattern \&right)}{operator<(const Pattern &right)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Pattern\+::operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Pattern} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_pattern_a157a34771b4c550a7cf528f09fa685b5}{}\label{class_pattern_a157a34771b4c550a7cf528f09fa685b5}
+
+
+operator $<$ for inserting into \hyperlink{class_pattern_tree}{Pattern\+Tree} 
+
+\index{Pattern@{Pattern}!operator=@{operator=}}
+\index{operator=@{operator=}!Pattern@{Pattern}}
+\subsubsection[{\texorpdfstring{operator=(const Pattern \&other)}{operator=(const Pattern &other)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Pattern}\& Pattern\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Pattern} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_pattern_a69f59394d218d0e476ef9259130e6bef}{}\label{class_pattern_a69f59394d218d0e476ef9259130e6bef}
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{class_pattern_a69f59394d218d0e476ef9259130e6bef_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Pattern@{Pattern}!print@{print}}
+\index{print@{print}!Pattern@{Pattern}}
+\subsubsection[{\texorpdfstring{print() const }{print() const }}]{\setlength{\rightskip}{0pt plus 5cm}void Pattern\+::print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_pattern_a44a70e6aff49a25fa068487e3d9f0fa3}{}\label{class_pattern_a44a70e6aff49a25fa068487e3d9f0fa3}
+
+
+print basic information about the pattern 
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_pattern_a44a70e6aff49a25fa068487e3d9f0fa3_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Pattern@{Pattern}!m\+\_\+hash@{m\+\_\+hash}}
+\index{m\+\_\+hash@{m\+\_\+hash}!Pattern@{Pattern}}
+\subsubsection[{\texorpdfstring{m\+\_\+hash}{m_hash}}]{\setlength{\rightskip}{0pt plus 5cm}long long int Pattern\+::m\+\_\+hash\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_pattern_ad2d90cf1c416dd89f29e7da860a02bfb}{}\label{class_pattern_ad2d90cf1c416dd89f29e7da860a02bfb}
+\index{Pattern@{Pattern}!m\+\_\+par\+Document@{m\+\_\+par\+Document}}
+\index{m\+\_\+par\+Document@{m\+\_\+par\+Document}!Pattern@{Pattern}}
+\subsubsection[{\texorpdfstring{m\+\_\+par\+Document}{m_parDocument}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Document}$\ast$ Pattern\+::m\+\_\+par\+Document\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_pattern_a3ce8a1a5ba37412027278315935c06b8}{}\label{class_pattern_a3ce8a1a5ba37412027278315935c06b8}
+\index{Pattern@{Pattern}!m\+\_\+pattern@{m\+\_\+pattern}}
+\index{m\+\_\+pattern@{m\+\_\+pattern}!Pattern@{Pattern}}
+\subsubsection[{\texorpdfstring{m\+\_\+pattern}{m_pattern}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Pattern\+::m\+\_\+pattern\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_pattern_a492ef4124f2dfebee1babe983cf3f726}{}\label{class_pattern_a492ef4124f2dfebee1babe983cf3f726}
+\index{Pattern@{Pattern}!m\+\_\+pos@{m\+\_\+pos}}
+\index{m\+\_\+pos@{m\+\_\+pos}!Pattern@{Pattern}}
+\subsubsection[{\texorpdfstring{m\+\_\+pos}{m_pos}}]{\setlength{\rightskip}{0pt plus 5cm}int Pattern\+::m\+\_\+pos\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_pattern_aa5b42830eafc550988e9156e4c370f67}{}\label{class_pattern_aa5b42830eafc550988e9156e4c370f67}

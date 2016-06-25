@@ -1,0 +1,128 @@
+\hypertarget{_settings_8h}{}\section{C\+:/\+Users/lenovo/\+Documents/m\+\_\+\+O\+O\+P\+\_\+programming/\+Team\+\_\+\+Project/antiplag/src/\+Settings.h File Reference}
+\label{_settings_8h}\index{C\+:/\+Users/lenovo/\+Documents/m\+\_\+\+O\+O\+P\+\_\+programming/\+Team\+\_\+\+Project/antiplag/src/\+Settings.\+h@{C\+:/\+Users/lenovo/\+Documents/m\+\_\+\+O\+O\+P\+\_\+programming/\+Team\+\_\+\+Project/antiplag/src/\+Settings.\+h}}
+{\ttfamily \#include $<$random$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$ostream$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+Include dependency graph for Settings.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_settings_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_settings_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_settings_8h_ad72dbcf6d0153db1b8d8a58001feed83}{D\+E\+B\+UG}
+\item 
+\#define \hyperlink{_settings_8h_a5ca8ce5feefc246b17dd80af3a274d8c}{D\+E\+B\+U\+G\+\_\+\+L\+O\+G\+F\+I\+LE}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_settings_8h_a3ebbf8abffb4569cd1fc09af6aa46229}{rand\+With\+Range} (int lo, int hi)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{_settings_8h_a3b0d2de1684708bad19aee241d8d74cc}{R\+K\+\_\+\+M\+OD}
+\item 
+const int \hyperlink{_settings_8h_a2d3ea80efb3693911ad6cce56b37de3d}{R\+K\+\_\+\+B\+A\+SE}
+\begin{DoxyCompactList}\small\item\em The base value for Rabin-\/\+Karp algorithm. \end{DoxyCompactList}\item 
+const int \hyperlink{_settings_8h_a778dde7837b2650f2a3cb38ff7ca854f}{R\+K\+\_\+\+B\+A\+S\+E\+\_\+\+P\+OW}
+\begin{DoxyCompactList}\small\item\em R\+K\+\_\+\+B\+A\+SE to the power of P\+A\+T\+T\+E\+R\+N\+\_\+\+L\+E\+N\+G\+T\+H-\/1, modular R\+K\+\_\+\+M\+OD. \end{DoxyCompactList}\item 
+const int \hyperlink{_settings_8h_a86356d0f4138522f5b9551ebc99dca9b}{W\+I\+N\+D\+O\+W\+\_\+\+L\+E\+N\+G\+TH}
+\begin{DoxyCompactList}\small\item\em The length of the window for winnowing algorithm, or the {\itshape guarantee threshold}. \end{DoxyCompactList}\item 
+const int \hyperlink{_settings_8h_aa50e7f9ae8c3962c0f7e630a2e0289da}{P\+A\+T\+T\+E\+R\+N\+\_\+\+L\+E\+N\+G\+TH}
+\begin{DoxyCompactList}\small\item\em The length of the patterns used by winnowing algorithm, or the {\itshape noise threshold}. \end{DoxyCompactList}\item 
+std\+::stringstream \hyperlink{_settings_8h_a385622964427094381b297db74a7260a}{debugout}
+\item 
+const std\+::string \hyperlink{_settings_8h_a1953222d5e7f6d1d6246d98fcee5bac5}{T\+Y\+PE} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Types of documents that can be handled, i.\+e. \char`\"{}.\+cpp\char`\"{}. \end{DoxyCompactList}\item 
+const int \hyperlink{_settings_8h_a9c291b573eb420b16803120736ed0d43}{T\+Y\+P\+E\+\_\+\+C\+O\+U\+NT}
+\begin{DoxyCompactList}\small\item\em Size of T\+Y\+PE. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{Settings.\+h@{Settings.\+h}!D\+E\+B\+UG@{D\+E\+B\+UG}}
+\index{D\+E\+B\+UG@{D\+E\+B\+UG}!Settings.\+h@{Settings.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+B\+UG}{DEBUG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+B\+UG}\hypertarget{_settings_8h_ad72dbcf6d0153db1b8d8a58001feed83}{}\label{_settings_8h_ad72dbcf6d0153db1b8d8a58001feed83}
+If D\+E\+B\+UG is defined, then log is printed, either via std\+::cout or into log.\+txt. \index{Settings.\+h@{Settings.\+h}!D\+E\+B\+U\+G\+\_\+\+L\+O\+G\+F\+I\+LE@{D\+E\+B\+U\+G\+\_\+\+L\+O\+G\+F\+I\+LE}}
+\index{D\+E\+B\+U\+G\+\_\+\+L\+O\+G\+F\+I\+LE@{D\+E\+B\+U\+G\+\_\+\+L\+O\+G\+F\+I\+LE}!Settings.\+h@{Settings.\+h}}
+\subsubsection[{\texorpdfstring{D\+E\+B\+U\+G\+\_\+\+L\+O\+G\+F\+I\+LE}{DEBUG_LOGFILE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define D\+E\+B\+U\+G\+\_\+\+L\+O\+G\+F\+I\+LE}\hypertarget{_settings_8h_a5ca8ce5feefc246b17dd80af3a274d8c}{}\label{_settings_8h_a5ca8ce5feefc246b17dd80af3a274d8c}
+If D\+E\+B\+U\+G\+\_\+\+L\+O\+G\+F\+I\+LE is defined, then log is printed into log.\+txt. Otherwise, log is printed via std\+::cout. If D\+E\+B\+UG is disabled, then this macro is useless. 
+
+\subsection{Function Documentation}
+\index{Settings.\+h@{Settings.\+h}!rand\+With\+Range@{rand\+With\+Range}}
+\index{rand\+With\+Range@{rand\+With\+Range}!Settings.\+h@{Settings.\+h}}
+\subsubsection[{\texorpdfstring{rand\+With\+Range(int lo, int hi)}{randWithRange(int lo, int hi)}}]{\setlength{\rightskip}{0pt plus 5cm}int rand\+With\+Range (
+\begin{DoxyParamCaption}
+\item[{int}]{lo, }
+\item[{int}]{hi}
+\end{DoxyParamCaption}
+)}\hypertarget{_settings_8h_a3ebbf8abffb4569cd1fc09af6aa46229}{}\label{_settings_8h_a3ebbf8abffb4569cd1fc09af6aa46229}
+\begin{DoxyReturn}{Returns}
+a random value in \mbox{[}lo, hi\mbox{]}. Uses std\+::default\+\_\+random\+\_\+engine. Coding skill\+: static member 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\index{Settings.\+h@{Settings.\+h}!debugout@{debugout}}
+\index{debugout@{debugout}!Settings.\+h@{Settings.\+h}}
+\subsubsection[{\texorpdfstring{debugout}{debugout}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::stringstream debugout}\hypertarget{_settings_8h_a385622964427094381b297db74a7260a}{}\label{_settings_8h_a385622964427094381b297db74a7260a}
+For debug output Note\+: the std\+::ofstream debugout is giving me tens of thousands of errors!!! Note\+: I will encapsulate the log facilities tomorrow. Now I will just disable D\+E\+B\+U\+G\+\_\+\+L\+O\+G\+F\+I\+LE. Note\+: I use stringstream for log now. Just output the stringstream in \hyperlink{main_8cpp_ae900b054a1598c54acaa67902f87185d}{clean\+Up()}. \index{Settings.\+h@{Settings.\+h}!P\+A\+T\+T\+E\+R\+N\+\_\+\+L\+E\+N\+G\+TH@{P\+A\+T\+T\+E\+R\+N\+\_\+\+L\+E\+N\+G\+TH}}
+\index{P\+A\+T\+T\+E\+R\+N\+\_\+\+L\+E\+N\+G\+TH@{P\+A\+T\+T\+E\+R\+N\+\_\+\+L\+E\+N\+G\+TH}!Settings.\+h@{Settings.\+h}}
+\subsubsection[{\texorpdfstring{P\+A\+T\+T\+E\+R\+N\+\_\+\+L\+E\+N\+G\+TH}{PATTERN_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}const int P\+A\+T\+T\+E\+R\+N\+\_\+\+L\+E\+N\+G\+TH}\hypertarget{_settings_8h_aa50e7f9ae8c3962c0f7e630a2e0289da}{}\label{_settings_8h_aa50e7f9ae8c3962c0f7e630a2e0289da}
+
+
+The length of the patterns used by winnowing algorithm, or the {\itshape noise threshold}. 
+
+\index{Settings.\+h@{Settings.\+h}!R\+K\+\_\+\+B\+A\+SE@{R\+K\+\_\+\+B\+A\+SE}}
+\index{R\+K\+\_\+\+B\+A\+SE@{R\+K\+\_\+\+B\+A\+SE}!Settings.\+h@{Settings.\+h}}
+\subsubsection[{\texorpdfstring{R\+K\+\_\+\+B\+A\+SE}{RK_BASE}}]{\setlength{\rightskip}{0pt plus 5cm}const int R\+K\+\_\+\+B\+A\+SE}\hypertarget{_settings_8h_a2d3ea80efb3693911ad6cce56b37de3d}{}\label{_settings_8h_a2d3ea80efb3693911ad6cce56b37de3d}
+
+
+The base value for Rabin-\/\+Karp algorithm. 
+
+\index{Settings.\+h@{Settings.\+h}!R\+K\+\_\+\+B\+A\+S\+E\+\_\+\+P\+OW@{R\+K\+\_\+\+B\+A\+S\+E\+\_\+\+P\+OW}}
+\index{R\+K\+\_\+\+B\+A\+S\+E\+\_\+\+P\+OW@{R\+K\+\_\+\+B\+A\+S\+E\+\_\+\+P\+OW}!Settings.\+h@{Settings.\+h}}
+\subsubsection[{\texorpdfstring{R\+K\+\_\+\+B\+A\+S\+E\+\_\+\+P\+OW}{RK_BASE_POW}}]{\setlength{\rightskip}{0pt plus 5cm}const int R\+K\+\_\+\+B\+A\+S\+E\+\_\+\+P\+OW}\hypertarget{_settings_8h_a778dde7837b2650f2a3cb38ff7ca854f}{}\label{_settings_8h_a778dde7837b2650f2a3cb38ff7ca854f}
+
+
+R\+K\+\_\+\+B\+A\+SE to the power of P\+A\+T\+T\+E\+R\+N\+\_\+\+L\+E\+N\+G\+T\+H-\/1, modular R\+K\+\_\+\+M\+OD. 
+
+\index{Settings.\+h@{Settings.\+h}!R\+K\+\_\+\+M\+OD@{R\+K\+\_\+\+M\+OD}}
+\index{R\+K\+\_\+\+M\+OD@{R\+K\+\_\+\+M\+OD}!Settings.\+h@{Settings.\+h}}
+\subsubsection[{\texorpdfstring{R\+K\+\_\+\+M\+OD}{RK_MOD}}]{\setlength{\rightskip}{0pt plus 5cm}const int R\+K\+\_\+\+M\+OD}\hypertarget{_settings_8h_a3b0d2de1684708bad19aee241d8d74cc}{}\label{_settings_8h_a3b0d2de1684708bad19aee241d8d74cc}
+\index{Settings.\+h@{Settings.\+h}!T\+Y\+PE@{T\+Y\+PE}}
+\index{T\+Y\+PE@{T\+Y\+PE}!Settings.\+h@{Settings.\+h}}
+\subsubsection[{\texorpdfstring{T\+Y\+PE}{TYPE}}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string T\+Y\+PE\mbox{[}$\,$\mbox{]}}\hypertarget{_settings_8h_a1953222d5e7f6d1d6246d98fcee5bac5}{}\label{_settings_8h_a1953222d5e7f6d1d6246d98fcee5bac5}
+
+
+Types of documents that can be handled, i.\+e. \char`\"{}.\+cpp\char`\"{}. 
+
+\index{Settings.\+h@{Settings.\+h}!T\+Y\+P\+E\+\_\+\+C\+O\+U\+NT@{T\+Y\+P\+E\+\_\+\+C\+O\+U\+NT}}
+\index{T\+Y\+P\+E\+\_\+\+C\+O\+U\+NT@{T\+Y\+P\+E\+\_\+\+C\+O\+U\+NT}!Settings.\+h@{Settings.\+h}}
+\subsubsection[{\texorpdfstring{T\+Y\+P\+E\+\_\+\+C\+O\+U\+NT}{TYPE_COUNT}}]{\setlength{\rightskip}{0pt plus 5cm}const int T\+Y\+P\+E\+\_\+\+C\+O\+U\+NT}\hypertarget{_settings_8h_a9c291b573eb420b16803120736ed0d43}{}\label{_settings_8h_a9c291b573eb420b16803120736ed0d43}
+
+
+Size of T\+Y\+PE. 
+
+\index{Settings.\+h@{Settings.\+h}!W\+I\+N\+D\+O\+W\+\_\+\+L\+E\+N\+G\+TH@{W\+I\+N\+D\+O\+W\+\_\+\+L\+E\+N\+G\+TH}}
+\index{W\+I\+N\+D\+O\+W\+\_\+\+L\+E\+N\+G\+TH@{W\+I\+N\+D\+O\+W\+\_\+\+L\+E\+N\+G\+TH}!Settings.\+h@{Settings.\+h}}
+\subsubsection[{\texorpdfstring{W\+I\+N\+D\+O\+W\+\_\+\+L\+E\+N\+G\+TH}{WINDOW_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}const int W\+I\+N\+D\+O\+W\+\_\+\+L\+E\+N\+G\+TH}\hypertarget{_settings_8h_a86356d0f4138522f5b9551ebc99dca9b}{}\label{_settings_8h_a86356d0f4138522f5b9551ebc99dca9b}
+
+
+The length of the window for winnowing algorithm, or the {\itshape guarantee threshold}. 
+

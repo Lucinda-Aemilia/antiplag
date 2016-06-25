@@ -1,0 +1,7 @@
+<map id="main" name="main">
+<area shape="rect" id="node2" href="$main_8cpp.html#a98b1050f09da390896f964fb7a892391" title="Initialize" alt="" coords="104,5,173,32"/>
+<area shape="rect" id="node3" href="$main_8cpp.html#ae900b054a1598c54acaa67902f87185d" title="cleanUp" alt="" coords="104,56,173,83"/>
+<area shape="rect" id="node4" href="$class_pattern_tree.html#ae3cb1d962789f1bfe37994eec207d493" title="PatternTree::instance" alt="" coords="221,31,368,57"/>
+<area shape="rect" id="node6" href="$class_pattern_tree.html#aeedfa28c34ce69dc494675e9662bd60b" title="PatternTree::destroy" alt="" coords="225,81,365,108"/>
+<area shape="rect" id="node5" href="$class_pattern_tree.html#a8c393d9dc7966220803f670062d81cb5" title="PatternTree::PatternTree" alt="" coords="416,31,580,57"/>
+</map>

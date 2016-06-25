@@ -1,0 +1,128 @@
+\hypertarget{_settings_8h}{}\section{C:/Users/lenovo/Documents/m\_OOP\_programming/Team\_Project/antiplag/src/Settings.h File Reference}
+\label{_settings_8h}\index{C:/Users/lenovo/Documents/m\_OOP\_programming/Team\_Project/antiplag/src/Settings.h@{C:/Users/lenovo/Documents/m\_OOP\_programming/Team\_Project/antiplag/src/Settings.h}}
+{\ttfamily \#include $<$random$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$ostream$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+Include dependency graph for Settings.h:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_settings_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_settings_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_settings_8h_ad72dbcf6d0153db1b8d8a58001feed83}{DEBUG}
+\item 
+\#define \hyperlink{_settings_8h_a5ca8ce5feefc246b17dd80af3a274d8c}{DEBUG\_LOGFILE}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_settings_8h_a3ebbf8abffb4569cd1fc09af6aa46229}{randWithRange} (int lo, int hi)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{_settings_8h_a3b0d2de1684708bad19aee241d8d74cc}{RK\_MOD}
+\item 
+const int \hyperlink{_settings_8h_a2d3ea80efb3693911ad6cce56b37de3d}{RK\_BASE}
+\begin{DoxyCompactList}\small\item\em The base value for Rabin-\/Karp algorithm. \end{DoxyCompactList}\item 
+const int \hyperlink{_settings_8h_a778dde7837b2650f2a3cb38ff7ca854f}{RK\_BASE\_POW}
+\begin{DoxyCompactList}\small\item\em RK\_BASE to the power of PATTERN\_LENGTH-\/1, modular RK\_MOD. \end{DoxyCompactList}\item 
+const int \hyperlink{_settings_8h_a86356d0f4138522f5b9551ebc99dca9b}{WINDOW\_LENGTH}
+\begin{DoxyCompactList}\small\item\em The length of the window for winnowing algorithm, or the {\itshape guarantee threshold}. \end{DoxyCompactList}\item 
+const int \hyperlink{_settings_8h_aa50e7f9ae8c3962c0f7e630a2e0289da}{PATTERN\_LENGTH}
+\begin{DoxyCompactList}\small\item\em The length of the patterns used by winnowing algorithm, or the {\itshape noise threshold}. \end{DoxyCompactList}\item 
+std::stringstream \hyperlink{_settings_8h_a385622964427094381b297db74a7260a}{debugout}
+\item 
+const std::string \hyperlink{_settings_8h_a1953222d5e7f6d1d6246d98fcee5bac5}{TYPE} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Types of documents that can be handled, i.e. \char`\"{}.cpp\char`\"{}. \end{DoxyCompactList}\item 
+const int \hyperlink{_settings_8h_a9c291b573eb420b16803120736ed0d43}{TYPE\_COUNT}
+\begin{DoxyCompactList}\small\item\em Size of TYPE. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{Settings.h@{Settings.h}!DEBUG@{DEBUG}}
+\index{DEBUG@{DEBUG}!Settings.h@{Settings.h}}
+\subsubsection[{\texorpdfstring{DEBUG}{DEBUG}}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG}\hypertarget{_settings_8h_ad72dbcf6d0153db1b8d8a58001feed83}{}\label{_settings_8h_ad72dbcf6d0153db1b8d8a58001feed83}
+If DEBUG is defined, then log is printed, either via std::cout or into log.txt. \index{Settings.h@{Settings.h}!DEBUG\_LOGFILE@{DEBUG\_LOGFILE}}
+\index{DEBUG\_LOGFILE@{DEBUG\_LOGFILE}!Settings.h@{Settings.h}}
+\subsubsection[{\texorpdfstring{DEBUG\_LOGFILE}{DEBUG_LOGFILE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define DEBUG\_LOGFILE}\hypertarget{_settings_8h_a5ca8ce5feefc246b17dd80af3a274d8c}{}\label{_settings_8h_a5ca8ce5feefc246b17dd80af3a274d8c}
+If DEBUG\_LOGFILE is defined, then log is printed into log.txt. Otherwise, log is printed via std::cout. If DEBUG is disabled, then this macro is useless. 
+
+\subsection{Function Documentation}
+\index{Settings.h@{Settings.h}!randWithRange@{randWithRange}}
+\index{randWithRange@{randWithRange}!Settings.h@{Settings.h}}
+\subsubsection[{\texorpdfstring{randWithRange(int lo, int hi)}{randWithRange(int lo, int hi)}}]{\setlength{\rightskip}{0pt plus 5cm}int randWithRange (
+\begin{DoxyParamCaption}
+\item[{int}]{lo, }
+\item[{int}]{hi}
+\end{DoxyParamCaption}
+)}\hypertarget{_settings_8h_a3ebbf8abffb4569cd1fc09af6aa46229}{}\label{_settings_8h_a3ebbf8abffb4569cd1fc09af6aa46229}
+\begin{DoxyReturn}{Returns}
+a random value in \mbox{[}lo, hi\mbox{]}. Uses std::default\_random\_engine. Coding skill: static member 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\index{Settings.h@{Settings.h}!debugout@{debugout}}
+\index{debugout@{debugout}!Settings.h@{Settings.h}}
+\subsubsection[{\texorpdfstring{debugout}{debugout}}]{\setlength{\rightskip}{0pt plus 5cm}std::stringstream debugout}\hypertarget{_settings_8h_a385622964427094381b297db74a7260a}{}\label{_settings_8h_a385622964427094381b297db74a7260a}
+For debug output Note: the std::ofstream debugout is giving me tens of thousands of errors!!! Note: I will encapsulate the log facilities tomorrow. Now I will just disable DEBUG\_LOGFILE. Note: I use stringstream for log now. Just output the stringstream in \hyperlink{main_8cpp_ae900b054a1598c54acaa67902f87185d}{cleanUp()}. \index{Settings.h@{Settings.h}!PATTERN\_LENGTH@{PATTERN\_LENGTH}}
+\index{PATTERN\_LENGTH@{PATTERN\_LENGTH}!Settings.h@{Settings.h}}
+\subsubsection[{\texorpdfstring{PATTERN\_LENGTH}{PATTERN_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}const int PATTERN\_LENGTH}\hypertarget{_settings_8h_aa50e7f9ae8c3962c0f7e630a2e0289da}{}\label{_settings_8h_aa50e7f9ae8c3962c0f7e630a2e0289da}
+
+
+The length of the patterns used by winnowing algorithm, or the {\itshape noise threshold}. 
+
+\index{Settings.h@{Settings.h}!RK\_BASE@{RK\_BASE}}
+\index{RK\_BASE@{RK\_BASE}!Settings.h@{Settings.h}}
+\subsubsection[{\texorpdfstring{RK\_BASE}{RK_BASE}}]{\setlength{\rightskip}{0pt plus 5cm}const int RK\_BASE}\hypertarget{_settings_8h_a2d3ea80efb3693911ad6cce56b37de3d}{}\label{_settings_8h_a2d3ea80efb3693911ad6cce56b37de3d}
+
+
+The base value for Rabin-\/Karp algorithm. 
+
+\index{Settings.h@{Settings.h}!RK\_BASE\_POW@{RK\_BASE\_POW}}
+\index{RK\_BASE\_POW@{RK\_BASE\_POW}!Settings.h@{Settings.h}}
+\subsubsection[{\texorpdfstring{RK\_BASE\_POW}{RK_BASE_POW}}]{\setlength{\rightskip}{0pt plus 5cm}const int RK\_BASE\_POW}\hypertarget{_settings_8h_a778dde7837b2650f2a3cb38ff7ca854f}{}\label{_settings_8h_a778dde7837b2650f2a3cb38ff7ca854f}
+
+
+RK\_BASE to the power of PATTERN\_LENGTH-\/1, modular RK\_MOD. 
+
+\index{Settings.h@{Settings.h}!RK\_MOD@{RK\_MOD}}
+\index{RK\_MOD@{RK\_MOD}!Settings.h@{Settings.h}}
+\subsubsection[{\texorpdfstring{RK\_MOD}{RK_MOD}}]{\setlength{\rightskip}{0pt plus 5cm}const int RK\_MOD}\hypertarget{_settings_8h_a3b0d2de1684708bad19aee241d8d74cc}{}\label{_settings_8h_a3b0d2de1684708bad19aee241d8d74cc}
+\index{Settings.h@{Settings.h}!TYPE@{TYPE}}
+\index{TYPE@{TYPE}!Settings.h@{Settings.h}}
+\subsubsection[{\texorpdfstring{TYPE}{TYPE}}]{\setlength{\rightskip}{0pt plus 5cm}const std::string TYPE\mbox{[}$\,$\mbox{]}}\hypertarget{_settings_8h_a1953222d5e7f6d1d6246d98fcee5bac5}{}\label{_settings_8h_a1953222d5e7f6d1d6246d98fcee5bac5}
+
+
+Types of documents that can be handled, i.e. \char`\"{}.cpp\char`\"{}. 
+
+\index{Settings.h@{Settings.h}!TYPE\_COUNT@{TYPE\_COUNT}}
+\index{TYPE\_COUNT@{TYPE\_COUNT}!Settings.h@{Settings.h}}
+\subsubsection[{\texorpdfstring{TYPE\_COUNT}{TYPE_COUNT}}]{\setlength{\rightskip}{0pt plus 5cm}const int TYPE\_COUNT}\hypertarget{_settings_8h_a9c291b573eb420b16803120736ed0d43}{}\label{_settings_8h_a9c291b573eb420b16803120736ed0d43}
+
+
+Size of TYPE. 
+
+\index{Settings.h@{Settings.h}!WINDOW\_LENGTH@{WINDOW\_LENGTH}}
+\index{WINDOW\_LENGTH@{WINDOW\_LENGTH}!Settings.h@{Settings.h}}
+\subsubsection[{\texorpdfstring{WINDOW\_LENGTH}{WINDOW_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}const int WINDOW\_LENGTH}\hypertarget{_settings_8h_a86356d0f4138522f5b9551ebc99dca9b}{}\label{_settings_8h_a86356d0f4138522f5b9551ebc99dca9b}
+
+
+The length of the window for winnowing algorithm, or the {\itshape guarantee threshold}. 
+

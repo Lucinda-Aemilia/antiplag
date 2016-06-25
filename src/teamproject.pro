@@ -15,8 +15,7 @@ HEADERS += antiplag.h \
            PatternTree.h \
            Project.h \
            Settings.h \
-           ui_widget.h \
-           widget.h
+    mainwindow.h
 SOURCES += Document.cpp \
            Homework.cpp \
            main.cpp \
@@ -24,4 +23,7 @@ SOURCES += Document.cpp \
            PatternTree.cpp \
            Project.cpp \
            Settings.cpp \
-           widget.cpp
+    mainwindow.cpp
+
+FORMS += \
+    mainwindow.ui

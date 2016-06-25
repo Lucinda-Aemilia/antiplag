@@ -1,0 +1,6 @@
+<map id="PatternTree::PatternTree" name="PatternTree::PatternTree">
+<area shape="rect" id="node2" href="$class_pattern_tree.html#ae3cb1d962789f1bfe37994eec207d493" title="PatternTree::instance" alt="" coords="217,56,364,83"/>
+<area shape="rect" id="node3" href="$class_document.html#ad6f3eb7808d3d6ad6f40e5b64a3317bc" title="Document::Document" alt="" coords="413,5,561,32"/>
+<area shape="rect" id="node4" href="$class_document.html#a607bc11ebda64c08fd22c8ca7aa373d3" title="Perform Rabin&#45;Karp algorithm for this document. " alt="" coords="412,56,561,83"/>
+<area shape="rect" id="node5" href="$class_document.html#aa02349519b475996d1206dfbbcaab349" title="Perdorm KMP algorithm for this document. " alt="" coords="427,107,546,133"/>
+</map>

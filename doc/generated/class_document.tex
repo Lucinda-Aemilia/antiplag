@@ -1,0 +1,223 @@
+\hypertarget{class_document}{}\section{Document Class Reference}
+\label{class_document}\index{Document@{Document}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_document_ad6f3eb7808d3d6ad6f40e5b64a3317bc}{Document} (std::string address)
+\item 
+void \hyperlink{class_document_a607bc11ebda64c08fd22c8ca7aa373d3}{RabinKarp} ()
+\begin{DoxyCompactList}\small\item\em Perform Rabin-\/Karp algorithm for this document. \end{DoxyCompactList}\item 
+void \hyperlink{class_document_aa02349519b475996d1206dfbbcaab349}{KMP} ()
+\begin{DoxyCompactList}\small\item\em Perdorm KMP algorithm for this document. \end{DoxyCompactList}\item 
+std::string \hyperlink{class_document_aba3c51ac1b4cb63dd9235aaa9e5ab6f0}{getAddress} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_document_a019a44be44bd7b548ea32e4c699bed49}{makePattern} ()
+\begin{DoxyCompactList}\small\item\em Make the patterns with winnowing algorithm. \end{DoxyCompactList}\item 
+void \hyperlink{class_document_a508bc7255ec6ddf96d0d7078ff0d1229}{preprocess} ()
+\item 
+bool \hyperlink{class_document_ae81119fe62cb6c73bff4c9283c97884f}{isValid} (char c)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_document}{Document} \& \hyperlink{class_document_a4ccdb9185bd311793ad385564553153c}{operator=} (const \hyperlink{class_document}{Document} \&other)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string \hyperlink{class_document_a20ece3a3a1e633e381d28813ad76a088}{m\_address}
+\item 
+std::string \hyperlink{class_document_a7d965b64a228ab63761ec4440a5549e0}{m\_content}
+\item 
+std::vector$<$ \hyperlink{class_pattern}{Pattern} $>$ \hyperlink{class_document_a6cdddf9610a671723515bb6c71553870}{m\_patterns}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Document@{Document}!Document@{Document}}
+\index{Document@{Document}!Document@{Document}}
+\subsubsection[{\texorpdfstring{Document(std::string address)}{Document(std::string address)}}]{\setlength{\rightskip}{0pt plus 5cm}Document::Document (
+\begin{DoxyParamCaption}
+\item[{std::string}]{address}
+\end{DoxyParamCaption}
+)}\hypertarget{class_document_ad6f3eb7808d3d6ad6f40e5b64a3317bc}{}\label{class_document_ad6f3eb7808d3d6ad6f40e5b64a3317bc}
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_document_ad6f3eb7808d3d6ad6f40e5b64a3317bc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Document@{Document}!getAddress@{getAddress}}
+\index{getAddress@{getAddress}!Document@{Document}}
+\subsubsection[{\texorpdfstring{getAddress()}{getAddress()}}]{\setlength{\rightskip}{0pt plus 5cm}std::string Document::getAddress (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_document_aba3c51ac1b4cb63dd9235aaa9e5ab6f0}{}\label{class_document_aba3c51ac1b4cb63dd9235aaa9e5ab6f0}
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_document_aba3c51ac1b4cb63dd9235aaa9e5ab6f0_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Document@{Document}!isValid@{isValid}}
+\index{isValid@{isValid}!Document@{Document}}
+\subsubsection[{\texorpdfstring{isValid(char c)}{isValid(char c)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Document::isValid (
+\begin{DoxyParamCaption}
+\item[{char}]{c}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_document_ae81119fe62cb6c73bff4c9283c97884f}{}\label{class_document_ae81119fe62cb6c73bff4c9283c97884f}
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_document_ae81119fe62cb6c73bff4c9283c97884f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Document@{Document}!KMP@{KMP}}
+\index{KMP@{KMP}!Document@{Document}}
+\subsubsection[{\texorpdfstring{KMP()}{KMP()}}]{\setlength{\rightskip}{0pt plus 5cm}void Document::KMP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_document_aa02349519b475996d1206dfbbcaab349}{}\label{class_document_aa02349519b475996d1206dfbbcaab349}
+
+
+Perdorm KMP algorithm for this document. 
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_document_aa02349519b475996d1206dfbbcaab349_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Document@{Document}!makePattern@{makePattern}}
+\index{makePattern@{makePattern}!Document@{Document}}
+\subsubsection[{\texorpdfstring{makePattern()}{makePattern()}}]{\setlength{\rightskip}{0pt plus 5cm}void Document::makePattern (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_document_a019a44be44bd7b548ea32e4c699bed49}{}\label{class_document_a019a44be44bd7b548ea32e4c699bed49}
+
+
+Make the patterns with winnowing algorithm. 
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_document_a019a44be44bd7b548ea32e4c699bed49_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Document@{Document}!operator=@{operator=}}
+\index{operator=@{operator=}!Document@{Document}}
+\subsubsection[{\texorpdfstring{operator=(const Document \&other)}{operator=(const Document &other)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Document}\& Document::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Document} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_document_a4ccdb9185bd311793ad385564553153c}{}\label{class_document_a4ccdb9185bd311793ad385564553153c}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_document_a4ccdb9185bd311793ad385564553153c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Document@{Document}!preprocess@{preprocess}}
+\index{preprocess@{preprocess}!Document@{Document}}
+\subsubsection[{\texorpdfstring{preprocess()}{preprocess()}}]{\setlength{\rightskip}{0pt plus 5cm}void Document::preprocess (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_document_a508bc7255ec6ddf96d0d7078ff0d1229}{}\label{class_document_a508bc7255ec6ddf96d0d7078ff0d1229}
+Remove spaces and taps and etc; Need to replace comments Need to add replacement 
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{class_document_a508bc7255ec6ddf96d0d7078ff0d1229_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_document_a508bc7255ec6ddf96d0d7078ff0d1229_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Document@{Document}!RabinKarp@{RabinKarp}}
+\index{RabinKarp@{RabinKarp}!Document@{Document}}
+\subsubsection[{\texorpdfstring{RabinKarp()}{RabinKarp()}}]{\setlength{\rightskip}{0pt plus 5cm}void Document::RabinKarp (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_document_a607bc11ebda64c08fd22c8ca7aa373d3}{}\label{class_document_a607bc11ebda64c08fd22c8ca7aa373d3}
+
+
+Perform Rabin-\/Karp algorithm for this document. 
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_document_a607bc11ebda64c08fd22c8ca7aa373d3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Document@{Document}!m\_address@{m\_address}}
+\index{m\_address@{m\_address}!Document@{Document}}
+\subsubsection[{\texorpdfstring{m\_address}{m_address}}]{\setlength{\rightskip}{0pt plus 5cm}std::string Document::m\_address\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_document_a20ece3a3a1e633e381d28813ad76a088}{}\label{class_document_a20ece3a3a1e633e381d28813ad76a088}
+\index{Document@{Document}!m\_content@{m\_content}}
+\index{m\_content@{m\_content}!Document@{Document}}
+\subsubsection[{\texorpdfstring{m\_content}{m_content}}]{\setlength{\rightskip}{0pt plus 5cm}std::string Document::m\_content\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_document_a7d965b64a228ab63761ec4440a5549e0}{}\label{class_document_a7d965b64a228ab63761ec4440a5549e0}
+\index{Document@{Document}!m\_patterns@{m\_patterns}}
+\index{m\_patterns@{m\_patterns}!Document@{Document}}
+\subsubsection[{\texorpdfstring{m\_patterns}{m_patterns}}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf Pattern}$>$ Document::m\_patterns\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_document_a6cdddf9610a671723515bb6c71553870}{}\label{class_document_a6cdddf9610a671723515bb6c71553870}

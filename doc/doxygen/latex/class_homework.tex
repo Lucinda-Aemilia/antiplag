@@ -1,0 +1,154 @@
+\hypertarget{class_homework}{}\section{Homework Class Reference}
+\label{class_homework}\index{Homework@{Homework}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_homework_a6509dc051b3763d7fea21b4557d3e79e}{Homework\+Type} \{ \hyperlink{class_homework_a6509dc051b3763d7fea21b4557d3e79ea36e19dfd1e533060c7fe573d957186b7}{Single}, 
+\hyperlink{class_homework_a6509dc051b3763d7fea21b4557d3e79ea70ece26b542060114ccdffac5e147ee9}{Multiple}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_homework_aff55dea2a7a6958a7c05c1e843061f81}{Homework} (std\+::string path, \hyperlink{class_homework_a6509dc051b3763d7fea21b4557d3e79e}{Homework\+Type} type)
+\begin{DoxyCompactList}\small\item\em Initialization and build the whole file system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_homework_aab839a8b3d15dbf849b018e2295aecc2}{find\+Single} (std\+::string file\+Path)
+\item 
+bool \hyperlink{class_homework_aef97adc1d880c7aaf5870d70b05777c0}{find\+Multiple} (std\+::string file\+Path)
+\item 
+void \hyperlink{class_homework_ae7c7babeff4d2f82b9ac0b139e92701e}{dfs\+Folder} (std\+::string folder\+Path, std\+::vector$<$ std\+::string $>$ \&address)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_homework_a6509dc051b3763d7fea21b4557d3e79e}{Homework\+Type} \hyperlink{class_homework_a2a684368d7bdfaa95ee102e4fa6372ba}{m\+\_\+type}
+\item 
+std\+::string \hyperlink{class_homework_acfd58f754bd1712de9903dc986dc6d1e}{m\+\_\+path}
+\item 
+std\+::vector$<$ \hyperlink{class_project}{Project} $>$ \hyperlink{class_homework_a7d9479cfebf02074e2ac340561f7fb8e}{m\+\_\+projects}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Enumeration Documentation}
+\index{Homework@{Homework}!Homework\+Type@{Homework\+Type}}
+\index{Homework\+Type@{Homework\+Type}!Homework@{Homework}}
+\subsubsection[{\texorpdfstring{Homework\+Type}{HomeworkType}}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Homework\+::\+Homework\+Type}}\hypertarget{class_homework_a6509dc051b3763d7fea21b4557d3e79e}{}\label{class_homework_a6509dc051b3763d7fea21b4557d3e79e}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{Single@{Single}!Homework@{Homework}}\index{Homework@{Homework}!Single@{Single}}\item[{\em 
+Single\hypertarget{class_homework_a6509dc051b3763d7fea21b4557d3e79ea36e19dfd1e533060c7fe573d957186b7}{}\label{class_homework_a6509dc051b3763d7fea21b4557d3e79ea36e19dfd1e533060c7fe573d957186b7}
+}]\index{Multiple@{Multiple}!Homework@{Homework}}\index{Homework@{Homework}!Multiple@{Multiple}}\item[{\em 
+Multiple\hypertarget{class_homework_a6509dc051b3763d7fea21b4557d3e79ea70ece26b542060114ccdffac5e147ee9}{}\label{class_homework_a6509dc051b3763d7fea21b4557d3e79ea70ece26b542060114ccdffac5e147ee9}
+}]\end{description}
+\end{Desc}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Homework@{Homework}!Homework@{Homework}}
+\index{Homework@{Homework}!Homework@{Homework}}
+\subsubsection[{\texorpdfstring{Homework(std\+::string path, Homework\+Type type)}{Homework(std::string path, HomeworkType type)}}]{\setlength{\rightskip}{0pt plus 5cm}Homework\+::\+Homework (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{path, }
+\item[{{\bf Homework\+Type}}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{class_homework_aff55dea2a7a6958a7c05c1e843061f81}{}\label{class_homework_aff55dea2a7a6958a7c05c1e843061f81}
+
+
+Initialization and build the whole file system. 
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homework_aff55dea2a7a6958a7c05c1e843061f81_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Homework@{Homework}!dfs\+Folder@{dfs\+Folder}}
+\index{dfs\+Folder@{dfs\+Folder}!Homework@{Homework}}
+\subsubsection[{\texorpdfstring{dfs\+Folder(std\+::string folder\+Path, std\+::vector$<$ std\+::string $>$ \&address)}{dfsFolder(std::string folderPath, std::vector< std::string > &address)}}]{\setlength{\rightskip}{0pt plus 5cm}void Homework\+::dfs\+Folder (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{folder\+Path, }
+\item[{std\+::vector$<$ std\+::string $>$ \&}]{address}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_homework_ae7c7babeff4d2f82b9ac0b139e92701e}{}\label{class_homework_ae7c7babeff4d2f82b9ac0b139e92701e}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_homework_ae7c7babeff4d2f82b9ac0b139e92701e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Homework@{Homework}!find\+Multiple@{find\+Multiple}}
+\index{find\+Multiple@{find\+Multiple}!Homework@{Homework}}
+\subsubsection[{\texorpdfstring{find\+Multiple(std\+::string file\+Path)}{findMultiple(std::string filePath)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Homework\+::find\+Multiple (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{file\+Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_homework_aef97adc1d880c7aaf5870d70b05777c0}{}\label{class_homework_aef97adc1d880c7aaf5870d70b05777c0}
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{class_homework_aef97adc1d880c7aaf5870d70b05777c0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=347pt]{class_homework_aef97adc1d880c7aaf5870d70b05777c0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Homework@{Homework}!find\+Single@{find\+Single}}
+\index{find\+Single@{find\+Single}!Homework@{Homework}}
+\subsubsection[{\texorpdfstring{find\+Single(std\+::string file\+Path)}{findSingle(std::string filePath)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Homework\+::find\+Single (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{file\+Path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_homework_aab839a8b3d15dbf849b018e2295aecc2}{}\label{class_homework_aab839a8b3d15dbf849b018e2295aecc2}
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_homework_aab839a8b3d15dbf849b018e2295aecc2_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{Homework@{Homework}!m\+\_\+path@{m\+\_\+path}}
+\index{m\+\_\+path@{m\+\_\+path}!Homework@{Homework}}
+\subsubsection[{\texorpdfstring{m\+\_\+path}{m_path}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Homework\+::m\+\_\+path\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_homework_acfd58f754bd1712de9903dc986dc6d1e}{}\label{class_homework_acfd58f754bd1712de9903dc986dc6d1e}
+\index{Homework@{Homework}!m\+\_\+projects@{m\+\_\+projects}}
+\index{m\+\_\+projects@{m\+\_\+projects}!Homework@{Homework}}
+\subsubsection[{\texorpdfstring{m\+\_\+projects}{m_projects}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Project}$>$ Homework\+::m\+\_\+projects\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_homework_a7d9479cfebf02074e2ac340561f7fb8e}{}\label{class_homework_a7d9479cfebf02074e2ac340561f7fb8e}
+\index{Homework@{Homework}!m\+\_\+type@{m\+\_\+type}}
+\index{m\+\_\+type@{m\+\_\+type}!Homework@{Homework}}
+\subsubsection[{\texorpdfstring{m\+\_\+type}{m_type}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Homework\+Type} Homework\+::m\+\_\+type\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_homework_a2a684368d7bdfaa95ee102e4fa6372ba}{}\label{class_homework_a2a684368d7bdfaa95ee102e4fa6372ba}

@@ -1,0 +1,206 @@
+\hypertarget{class_pattern_tree}{}\section{PatternTree Class Reference}
+\label{class_pattern_tree}\index{PatternTree@{PatternTree}}
+
+
+Collaboration diagram for PatternTree:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=219pt]{class_pattern_tree__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_pattern_tree_a8c393d9dc7966220803f670062d81cb5}{PatternTree} ()
+\item 
+void \hyperlink{class_pattern_tree_aeedfa28c34ce69dc494675e9662bd60b}{destroy} ()
+\item 
+void \hyperlink{class_pattern_tree_af698c6d454803b5debff21fe19eecab5}{insert} (const \hyperlink{class_pattern}{Pattern} \&pattern)
+\begin{DoxyCompactList}\small\item\em insert a pattern into the tree \end{DoxyCompactList}\item 
+std::vector$<$ \hyperlink{class_pattern}{Pattern} $>$ \hyperlink{class_pattern_tree_a86ae88dfb3fd379e2b914590b5a2f896}{find} (const long long int hash)
+\item 
+std::vector$<$ \hyperlink{class_pattern}{Pattern} $>$ \hyperlink{class_pattern_tree_a01a7afad6ad98b8d5958096c54c45b1f}{getAll} ()
+\item 
+void \hyperlink{class_pattern_tree_a4db45bd0a698e9999c743f5ac05c33a6}{print} ()
+\begin{DoxyCompactList}\small\item\em print some basic information about the tree \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_pattern_tree}{PatternTree} $\ast$ \hyperlink{class_pattern_tree_ae3cb1d962789f1bfe37994eec207d493}{instance} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_pattern_tree_af84e0bf107c0fda11f1c971bfe3d9c4f}{PatternTree} (const \hyperlink{class_pattern_tree}{PatternTree} \&other)
+\item 
+\hyperlink{class_pattern_tree}{PatternTree} \& \hyperlink{class_pattern_tree_ad1ece378133ff4abb282cea9204b0ccc}{operator=} (const \hyperlink{class_pattern_tree}{PatternTree} \&right)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+patternMmap \hyperlink{class_pattern_tree_a8aa612fc369e9106116ad8e3e5b02021}{m\_tree}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_pattern_tree}{PatternTree} $\ast$ \hyperlink{class_pattern_tree_a84a86ffd132359390369421d1fb4c594}{m\_instance} = NULL
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A tree with all patterns stored in it Singleton 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{PatternTree@{PatternTree}!PatternTree@{PatternTree}}
+\index{PatternTree@{PatternTree}!PatternTree@{PatternTree}}
+\subsubsection[{\texorpdfstring{PatternTree()}{PatternTree()}}]{\setlength{\rightskip}{0pt plus 5cm}PatternTree::PatternTree (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_pattern_tree_a8c393d9dc7966220803f670062d81cb5}{}\label{class_pattern_tree_a8c393d9dc7966220803f670062d81cb5}
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_pattern_tree_a8c393d9dc7966220803f670062d81cb5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{PatternTree@{PatternTree}!PatternTree@{PatternTree}}
+\index{PatternTree@{PatternTree}!PatternTree@{PatternTree}}
+\subsubsection[{\texorpdfstring{PatternTree(const PatternTree \&other)}{PatternTree(const PatternTree &other)}}]{\setlength{\rightskip}{0pt plus 5cm}PatternTree::PatternTree (
+\begin{DoxyParamCaption}
+\item[{const {\bf PatternTree} \&}]{other}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_pattern_tree_af84e0bf107c0fda11f1c971bfe3d9c4f}{}\label{class_pattern_tree_af84e0bf107c0fda11f1c971bfe3d9c4f}
+
+
+\subsection{Member Function Documentation}
+\index{PatternTree@{PatternTree}!destroy@{destroy}}
+\index{destroy@{destroy}!PatternTree@{PatternTree}}
+\subsubsection[{\texorpdfstring{destroy()}{destroy()}}]{\setlength{\rightskip}{0pt plus 5cm}void PatternTree::destroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_pattern_tree_aeedfa28c34ce69dc494675e9662bd60b}{}\label{class_pattern_tree_aeedfa28c34ce69dc494675e9662bd60b}
+\index{PatternTree@{PatternTree}!find@{find}}
+\index{find@{find}!PatternTree@{PatternTree}}
+\subsubsection[{\texorpdfstring{find(const long long int hash)}{find(const long long int hash)}}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ {\bf Pattern} $>$ PatternTree::find (
+\begin{DoxyParamCaption}
+\item[{const long long int}]{hash}
+\end{DoxyParamCaption}
+)}\hypertarget{class_pattern_tree_a86ae88dfb3fd379e2b914590b5a2f896}{}\label{class_pattern_tree_a86ae88dfb3fd379e2b914590b5a2f896}
+find a set of patterns with the same hash value in the tree Note: I cannot make it const... \index{PatternTree@{PatternTree}!getAll@{getAll}}
+\index{getAll@{getAll}!PatternTree@{PatternTree}}
+\subsubsection[{\texorpdfstring{getAll()}{getAll()}}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ {\bf Pattern} $>$ PatternTree::getAll (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_pattern_tree_a01a7afad6ad98b8d5958096c54c45b1f}{}\label{class_pattern_tree_a01a7afad6ad98b8d5958096c54c45b1f}
+\index{PatternTree@{PatternTree}!insert@{insert}}
+\index{insert@{insert}!PatternTree@{PatternTree}}
+\subsubsection[{\texorpdfstring{insert(const Pattern \&pattern)}{insert(const Pattern &pattern)}}]{\setlength{\rightskip}{0pt plus 5cm}void PatternTree::insert (
+\begin{DoxyParamCaption}
+\item[{const {\bf Pattern} \&}]{pattern}
+\end{DoxyParamCaption}
+)}\hypertarget{class_pattern_tree_af698c6d454803b5debff21fe19eecab5}{}\label{class_pattern_tree_af698c6d454803b5debff21fe19eecab5}
+
+
+insert a pattern into the tree 
+
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{class_pattern_tree_af698c6d454803b5debff21fe19eecab5_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=324pt]{class_pattern_tree_af698c6d454803b5debff21fe19eecab5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{PatternTree@{PatternTree}!instance@{instance}}
+\index{instance@{instance}!PatternTree@{PatternTree}}
+\subsubsection[{\texorpdfstring{instance()}{instance()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PatternTree} $\ast$ PatternTree::instance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\hypertarget{class_pattern_tree_ae3cb1d962789f1bfe37994eec207d493}{}\label{class_pattern_tree_ae3cb1d962789f1bfe37994eec207d493}
+
+
+Here is the call graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=349pt]{class_pattern_tree_ae3cb1d962789f1bfe37994eec207d493_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{class_pattern_tree_ae3cb1d962789f1bfe37994eec207d493_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{PatternTree@{PatternTree}!operator=@{operator=}}
+\index{operator=@{operator=}!PatternTree@{PatternTree}}
+\subsubsection[{\texorpdfstring{operator=(const PatternTree \&right)}{operator=(const PatternTree &right)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PatternTree}\& PatternTree::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf PatternTree} \&}]{right}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_pattern_tree_ad1ece378133ff4abb282cea9204b0ccc}{}\label{class_pattern_tree_ad1ece378133ff4abb282cea9204b0ccc}
+\index{PatternTree@{PatternTree}!print@{print}}
+\index{print@{print}!PatternTree@{PatternTree}}
+\subsubsection[{\texorpdfstring{print()}{print()}}]{\setlength{\rightskip}{0pt plus 5cm}void PatternTree::print (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_pattern_tree_a4db45bd0a698e9999c743f5ac05c33a6}{}\label{class_pattern_tree_a4db45bd0a698e9999c743f5ac05c33a6}
+
+
+print some basic information about the tree 
+
+
+
+Here is the caller graph for this function:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=319pt]{class_pattern_tree_a4db45bd0a698e9999c743f5ac05c33a6_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\index{PatternTree@{PatternTree}!m\_instance@{m\_instance}}
+\index{m\_instance@{m\_instance}!PatternTree@{PatternTree}}
+\subsubsection[{\texorpdfstring{m\_instance}{m_instance}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf PatternTree} $\ast$ PatternTree::m\_instance = NULL\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\hypertarget{class_pattern_tree_a84a86ffd132359390369421d1fb4c594}{}\label{class_pattern_tree_a84a86ffd132359390369421d1fb4c594}
+\index{PatternTree@{PatternTree}!m\_tree@{m\_tree}}
+\index{m\_tree@{m\_tree}!PatternTree@{PatternTree}}
+\subsubsection[{\texorpdfstring{m\_tree}{m_tree}}]{\setlength{\rightskip}{0pt plus 5cm}patternMmap PatternTree::m\_tree\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_pattern_tree_a8aa612fc369e9106116ad8e3e5b02021}{}\label{class_pattern_tree_a8aa612fc369e9106116ad8e3e5b02021}

@@ -1,0 +1,76 @@
+\hypertarget{_settings_8cpp}{}\section{C\+:/\+Users/lenovo/\+Documents/m\+\_\+\+O\+O\+P\+\_\+programming/\+Team\+\_\+\+Project/antiplag/src/\+Settings.cpp File Reference}
+\label{_settings_8cpp}\index{C\+:/\+Users/lenovo/\+Documents/m\+\_\+\+O\+O\+P\+\_\+programming/\+Team\+\_\+\+Project/antiplag/src/\+Settings.\+cpp@{C\+:/\+Users/lenovo/\+Documents/m\+\_\+\+O\+O\+P\+\_\+programming/\+Team\+\_\+\+Project/antiplag/src/\+Settings.\+cpp}}
+{\ttfamily \#include \char`\"{}Settings.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$random$>$}\\*
+{\ttfamily \#include $<$ctime$>$}\\*
+Include dependency graph for Settings.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_settings_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_settings_8cpp_a3ebbf8abffb4569cd1fc09af6aa46229}{rand\+With\+Range} (int lo, int hi)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{_settings_8cpp_a3b0d2de1684708bad19aee241d8d74cc}{R\+K\+\_\+\+M\+OD} = 1e6 + 7
+\item 
+const int \hyperlink{_settings_8cpp_a2d3ea80efb3693911ad6cce56b37de3d}{R\+K\+\_\+\+B\+A\+SE} = 97
+\item 
+const int \hyperlink{_settings_8cpp_a86356d0f4138522f5b9551ebc99dca9b}{W\+I\+N\+D\+O\+W\+\_\+\+L\+E\+N\+G\+TH} = 500
+\begin{DoxyCompactList}\small\item\em The length of the window for winnowing algorithm, or the {\itshape guarantee threshold}. \end{DoxyCompactList}\item 
+const int \hyperlink{_settings_8cpp_aa50e7f9ae8c3962c0f7e630a2e0289da}{P\+A\+T\+T\+E\+R\+N\+\_\+\+L\+E\+N\+G\+TH} = 50
+\begin{DoxyCompactList}\small\item\em The length of the patterns used by winnowing algorithm, or the {\itshape noise threshold}. \end{DoxyCompactList}\item 
+const std\+::string \hyperlink{_settings_8cpp_a1953222d5e7f6d1d6246d98fcee5bac5}{T\+Y\+PE} \mbox{[}$\,$\mbox{]} = \{\char`\"{}.cc\char`\"{}, \char`\"{}.cpp\char`\"{}, \char`\"{}.cxx\char`\"{}, \char`\"{}.h\char`\"{}\}
+\item 
+const int \hyperlink{_settings_8cpp_a9c291b573eb420b16803120736ed0d43}{T\+Y\+P\+E\+\_\+\+C\+O\+U\+NT} = 4
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{Settings.\+cpp@{Settings.\+cpp}!rand\+With\+Range@{rand\+With\+Range}}
+\index{rand\+With\+Range@{rand\+With\+Range}!Settings.\+cpp@{Settings.\+cpp}}
+\subsubsection[{\texorpdfstring{rand\+With\+Range(int lo, int hi)}{randWithRange(int lo, int hi)}}]{\setlength{\rightskip}{0pt plus 5cm}int rand\+With\+Range (
+\begin{DoxyParamCaption}
+\item[{int}]{lo, }
+\item[{int}]{hi}
+\end{DoxyParamCaption}
+)}\hypertarget{_settings_8cpp_a3ebbf8abffb4569cd1fc09af6aa46229}{}\label{_settings_8cpp_a3ebbf8abffb4569cd1fc09af6aa46229}
+\begin{DoxyReturn}{Returns}
+a random value in \mbox{[}lo, hi\mbox{]}. Uses std\+::default\+\_\+random\+\_\+engine. Coding skill\+: static member 
+\end{DoxyReturn}
+
+
+\subsection{Variable Documentation}
+\index{Settings.\+cpp@{Settings.\+cpp}!P\+A\+T\+T\+E\+R\+N\+\_\+\+L\+E\+N\+G\+TH@{P\+A\+T\+T\+E\+R\+N\+\_\+\+L\+E\+N\+G\+TH}}
+\index{P\+A\+T\+T\+E\+R\+N\+\_\+\+L\+E\+N\+G\+TH@{P\+A\+T\+T\+E\+R\+N\+\_\+\+L\+E\+N\+G\+TH}!Settings.\+cpp@{Settings.\+cpp}}
+\subsubsection[{\texorpdfstring{P\+A\+T\+T\+E\+R\+N\+\_\+\+L\+E\+N\+G\+TH}{PATTERN_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}const int P\+A\+T\+T\+E\+R\+N\+\_\+\+L\+E\+N\+G\+TH = 50}\hypertarget{_settings_8cpp_aa50e7f9ae8c3962c0f7e630a2e0289da}{}\label{_settings_8cpp_aa50e7f9ae8c3962c0f7e630a2e0289da}
+
+
+The length of the patterns used by winnowing algorithm, or the {\itshape noise threshold}. 
+
+\index{Settings.\+cpp@{Settings.\+cpp}!R\+K\+\_\+\+B\+A\+SE@{R\+K\+\_\+\+B\+A\+SE}}
+\index{R\+K\+\_\+\+B\+A\+SE@{R\+K\+\_\+\+B\+A\+SE}!Settings.\+cpp@{Settings.\+cpp}}
+\subsubsection[{\texorpdfstring{R\+K\+\_\+\+B\+A\+SE}{RK_BASE}}]{\setlength{\rightskip}{0pt plus 5cm}const int R\+K\+\_\+\+B\+A\+SE = 97}\hypertarget{_settings_8cpp_a2d3ea80efb3693911ad6cce56b37de3d}{}\label{_settings_8cpp_a2d3ea80efb3693911ad6cce56b37de3d}
+\index{Settings.\+cpp@{Settings.\+cpp}!R\+K\+\_\+\+M\+OD@{R\+K\+\_\+\+M\+OD}}
+\index{R\+K\+\_\+\+M\+OD@{R\+K\+\_\+\+M\+OD}!Settings.\+cpp@{Settings.\+cpp}}
+\subsubsection[{\texorpdfstring{R\+K\+\_\+\+M\+OD}{RK_MOD}}]{\setlength{\rightskip}{0pt plus 5cm}const int R\+K\+\_\+\+M\+OD = 1e6 + 7}\hypertarget{_settings_8cpp_a3b0d2de1684708bad19aee241d8d74cc}{}\label{_settings_8cpp_a3b0d2de1684708bad19aee241d8d74cc}
+\index{Settings.\+cpp@{Settings.\+cpp}!T\+Y\+PE@{T\+Y\+PE}}
+\index{T\+Y\+PE@{T\+Y\+PE}!Settings.\+cpp@{Settings.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+Y\+PE}{TYPE}}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string T\+Y\+PE\mbox{[}$\,$\mbox{]} = \{\char`\"{}.cc\char`\"{}, \char`\"{}.cpp\char`\"{}, \char`\"{}.cxx\char`\"{}, \char`\"{}.h\char`\"{}\}}\hypertarget{_settings_8cpp_a1953222d5e7f6d1d6246d98fcee5bac5}{}\label{_settings_8cpp_a1953222d5e7f6d1d6246d98fcee5bac5}
+\index{Settings.\+cpp@{Settings.\+cpp}!T\+Y\+P\+E\+\_\+\+C\+O\+U\+NT@{T\+Y\+P\+E\+\_\+\+C\+O\+U\+NT}}
+\index{T\+Y\+P\+E\+\_\+\+C\+O\+U\+NT@{T\+Y\+P\+E\+\_\+\+C\+O\+U\+NT}!Settings.\+cpp@{Settings.\+cpp}}
+\subsubsection[{\texorpdfstring{T\+Y\+P\+E\+\_\+\+C\+O\+U\+NT}{TYPE_COUNT}}]{\setlength{\rightskip}{0pt plus 5cm}const int T\+Y\+P\+E\+\_\+\+C\+O\+U\+NT = 4}\hypertarget{_settings_8cpp_a9c291b573eb420b16803120736ed0d43}{}\label{_settings_8cpp_a9c291b573eb420b16803120736ed0d43}
+\index{Settings.\+cpp@{Settings.\+cpp}!W\+I\+N\+D\+O\+W\+\_\+\+L\+E\+N\+G\+TH@{W\+I\+N\+D\+O\+W\+\_\+\+L\+E\+N\+G\+TH}}
+\index{W\+I\+N\+D\+O\+W\+\_\+\+L\+E\+N\+G\+TH@{W\+I\+N\+D\+O\+W\+\_\+\+L\+E\+N\+G\+TH}!Settings.\+cpp@{Settings.\+cpp}}
+\subsubsection[{\texorpdfstring{W\+I\+N\+D\+O\+W\+\_\+\+L\+E\+N\+G\+TH}{WINDOW_LENGTH}}]{\setlength{\rightskip}{0pt plus 5cm}const int W\+I\+N\+D\+O\+W\+\_\+\+L\+E\+N\+G\+TH = 500}\hypertarget{_settings_8cpp_a86356d0f4138522f5b9551ebc99dca9b}{}\label{_settings_8cpp_a86356d0f4138522f5b9551ebc99dca9b}
+
+
+The length of the window for winnowing algorithm, or the {\itshape guarantee threshold}. 
+

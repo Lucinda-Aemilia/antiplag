@@ -1,0 +1,10 @@
+<map id="Document::Document" name="Document::Document">
+<area shape="rect" id="node2" href="$class_document.html#a508bc7255ec6ddf96d0d7078ff0d1229" title="Document::preprocess" alt="" coords="206,5,359,32"/>
+<area shape="rect" id="node4" href="$class_document.html#a019a44be44bd7b548ea32e4c699bed49" title="Make the patterns with winnowing algorithm. " alt="" coords="201,56,364,83"/>
+<area shape="rect" id="node5" href="$class_pattern_tree.html#ae3cb1d962789f1bfe37994eec207d493" title="PatternTree::instance" alt="" coords="209,107,356,133"/>
+<area shape="rect" id="node7" href="$class_pattern_tree.html#af698c6d454803b5debff21fe19eecab5" title="insert a pattern into the tree " alt="" coords="218,157,347,184"/>
+<area shape="rect" id="node9" href="$class_pattern_tree.html#a4db45bd0a698e9999c743f5ac05c33a6" title="print some basic information about the tree " alt="" coords="221,208,344,235"/>
+<area shape="rect" id="node3" href="$class_document.html#ae81119fe62cb6c73bff4c9283c97884f" title="Document::isValid" alt="" coords="430,5,558,32"/>
+<area shape="rect" id="node6" href="$class_pattern_tree.html#a8c393d9dc7966220803f670062d81cb5" title="PatternTree::PatternTree" alt="" coords="412,107,576,133"/>
+<area shape="rect" id="node8" href="$class_pattern.html#ab6c1a23c63162c8e9bc27061e9370ed1" title="Pattern::getHash" alt="" coords="434,157,554,184"/>
+</map>
