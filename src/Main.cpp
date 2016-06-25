@@ -3,6 +3,9 @@
 #include <iostream>
 #include <fstream>
 #include <ctime>
+#include "widget.h"
+#include "ui_widget.h"
+#include <QApplication>
 
 int ans = 1;
 
@@ -51,14 +54,15 @@ void cleanUp()
 	#endif // DEBUG_LOGFILE
 #endif // DEBUG
 	
-int main()
+int main(int argc, char *argv[])
 {
-	Initialize();
+    Initialize();
+    QApplication a(argc, argv);
+    Widget w;
+    w.show();
+    Homework hw1("..\\testcase", Homework::Single);
+    Homework hw2("..\\testcase", Homework::Multiple);
+    cleanUp();
 	
-	Homework hw1("..\\testcase", Homework::Single);
-	Homework hw2("..\\testcase", Homework::Multiple);
-	
-	cleanUp();
-	
-	return 0;
+	return a.exec();
 }
