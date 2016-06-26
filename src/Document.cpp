@@ -7,8 +7,9 @@
 #include <cstring>
 #include <QDebug>
 
-Document::Document(std::string address, int id/* = 0*/, int projectId/* = 0*/) :
-    m_address(address), m_id(id), m_projectId(projectId)
+Document::Document(std::string address, int id/* = 0*/, int projectId/* = 0*/,
+                   Preprocess* preprocess/* = new SimpleProcess() */) :
+    m_address(address), m_id(id), m_projectId(projectId), m_preprocess(preprocess)
 {
 	std::ifstream fin(address.c_str());
     // std::std::cout << address << std::endl;
@@ -35,7 +36,8 @@ Document::Document(std::string address, int id/* = 0*/, int projectId/* = 0*/) :
     std::cout << "Document address: " << m_address << std::endl << std::endl;
     // std::std::cout << "Content before prepossing" << std::endl << m_content << std::endl;
 	
-	preprocess();
+    // Preprocess
+    m_preprocess->work(m_content);
 	
 	makePattern();
 
@@ -130,26 +132,6 @@ void Document::makePattern()
 			}
 		}
 	}
-}
-
-/// Remove spaces and taps and etc;
-/// Need to replace comments
-/// Need to add replacement
-void Document::preprocess()
-{
-	std::string newContent;
-	for (int i = 0; i < m_content.length(); i++)
-	{
-		if (isValid(m_content[i]))
-			newContent += m_content[i];
-	}
-	m_content = newContent;
-}
-
-bool Document::isValid(char c)
-{
-	if (c>=33 && c<=126) return true;
-	return false;
 }
 
 std::vector<Document::Resemblance> Document::Winnowing()

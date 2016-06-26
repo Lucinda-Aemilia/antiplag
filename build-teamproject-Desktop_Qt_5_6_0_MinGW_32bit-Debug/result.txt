@@ -1,0 +1,30 @@
+--------------------------------------
+Project 0
+Address: C:\Users\lenovo\Documents\m_OOP_programming\Team_Project\antiplag\testcase
+Clashes: 
+With Project 1
+Clashes: 0
+Similarity: 0 / 0
+With Project 2
+Clashes: 0
+Similarity: 0 / 0
+--------------------------------------
+Project 1
+Address: C:\Users\lenovo\Documents\m_OOP_programming\Team_Project\antiplag\testcase
+Clashes: 
+With Project 0
+Clashes: 0
+Similarity: 0 / 0
+With Project 2
+Clashes: 8
+Similarity: 0.122699 / 0.236686
+--------------------------------------
+Project 2
+Address: C:\Users\lenovo\Documents\m_OOP_programming\Team_Project\antiplag\testcase
+Clashes: 
+With Project 0
+Clashes: 0
+Similarity: 0 / 0
+With Project 1
+Clashes: 8
+Similarity: 0.236686 / 0.122699

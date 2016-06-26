@@ -2,6 +2,7 @@
 
 #include "Settings.h"
 #include "Pattern.h"
+#include "Preprocess.h"
 
 #include <string>
 #include <vector>
@@ -59,13 +60,15 @@ public:
 
         void print()
         {
-            std::cout << "= Position in " << m_projectId << '.' << m_documentId << " document: " << m_pos << std::endl;
+            std::cout << "= Position in " << m_projectId << '.' << m_documentId
+                      << " document: " << m_pos << std::endl;
             std::cout << "= Position in " << m_other_projectId << '.'
                       << m_other_documentId << " the other document: " << m_other_pos << std::endl;
         }
     };
 	
-    Document(std::string address, int id = 0, int projectId = 0);
+    Document(std::string address, int id = 0, int projectId = 0,
+             Preprocess* preprocess = new SimplePreprocess());
 
     std::vector<Resemblance> Winnowing();
 	
@@ -79,25 +82,46 @@ public:
 
     int getProjectId() const { return m_projectId; }
 
+    int getLength() const { return m_content.length(); }
+
     void print() const
     {
         std::cout << "Document: ";
         std::cout << m_address << std::endl;
     }
 
+    Preprocess* getPreprocess() { return m_preprocess; }
+
+    void setPreprocess(Preprocess* preprocess)
+    {
+        if (m_preprocess != NULL)
+            delete m_preprocess;
+        m_preprocess = preprocess;
+    }
+
+    Document(const Document& other) : m_address(other.m_address), m_id(other.m_id),
+        m_projectId(other.m_projectId), m_content(other.m_content),
+        m_patterns(other.m_patterns)
+    {
+        m_preprocess = new SimplePreprocess();
+    }
+
+    ~Document()
+    {
+        if (m_preprocess != NULL)
+            delete m_preprocess;
+    }
+
 protected:
 
+    Preprocess* m_preprocess;
+
 	void makePattern();
-	
-	void preprocess();
-	
-	bool isValid(char c);
 
     std::vector<Resemblance> m_resem;
 	
 private:
 
-	// Document(const Document& other);
 	Document& operator = (const Document& other);
 	
 	std::string m_address;

@@ -1,0 +1,12 @@
+INPUT(
+./release\Document.o
+./release\Homework.o
+./release\main.o
+./release\Pattern.o
+./release\PatternTree.o
+./release\Project.o
+./release\Settings.o
+./release\mainwindow.o
+./release\Preprocess.o
+./release\moc_mainwindow.o
+);

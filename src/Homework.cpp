@@ -1,12 +1,15 @@
 #include "Homework.h"
 #include <io.h>
+#include <fstream>
 #include <string>
 #include <vector>
 #include <string.h>
 #include <QDebug>
 
 /// Initialization and build the whole file system
-Homework::Homework(std::string path, HomeworkType type) : m_path(path), m_type(type)
+Homework::Homework(std::string path, HomeworkType type, std::string excluded,
+                   Preprocess* preprocess/* = new SimplePreprocess()*/) : m_path(path),
+    m_type(type), m_excluded(excluded), m_preprocess(preprocess)
 {
     PatternTree::instance()->clearAll();
 
@@ -21,8 +24,34 @@ Homework::Homework(std::string path, HomeworkType type) : m_path(path), m_type(t
 			throw "Can't find the path " + path;
 	}
 
-    m_resems.clear();
+    // Preprocess the contents to be excluded
+    m_preprocess->work(m_excluded);
 
+    if (m_excluded.size() >= PATTERN_LENGTH)
+    {
+        // Delete the patterns that should be excluded
+        long long int hash = 0, pow = 1;
+        for (int j = PATTERN_LENGTH-1; j >= 0; j--)
+        {
+            hash += (int)m_excluded[j] * pow;
+            if (j != 0)
+                pow *= RK_BASE;
+            hash %= RK_MOD;
+            pow %= RK_MOD;
+        }
+        for (int j = 0; j < m_excluded.length()-PATTERN_LENGTH; j++)
+        {
+            PatternTree::instance()->erase(hash, m_excluded.substr(j, PATTERN_LENGTH));
+
+            hash -= (int)m_excluded[j] * pow;
+            hash *= RK_BASE;
+            hash += (int)m_excluded[j + PATTERN_LENGTH];
+            hash %= RK_MOD;
+            hash = (hash + RK_MOD) % RK_MOD;
+        }
+    }
+
+    m_resems.clear();
     for (int i = 0; i < m_projects.size(); i++)
     {
         std::vector<Document::Resemblance> resem(m_projects[i].doWinnow());
@@ -82,7 +111,7 @@ bool Homework::findSingle(std::string filePath)
 		if (!find)
 			continue;
 		
-		address[0] = filePath + "\\" + name;
+        address[0] = filePath + "\\" + name;
 		
 
         std::cout << "\n********************************************************************************\n\n" ;
@@ -90,7 +119,7 @@ bool Homework::findSingle(std::string filePath)
         std::cout << "Address = " << address[0] << std::endl;
 
 		
-        m_projects.push_back(Project(filePath, address, m_projects.size()));
+        m_projects.push_back(Project(address[0], address, m_projects.size()));
 		
 	} while (_findnext(handle, &fileInfo) == 0);		
 	
@@ -131,6 +160,9 @@ bool Homework::findMultiple(std::string filePath)
             {
 				address.clear();
                 std::string projectPath = filePath + "\\" + fileInfo.name;
+
+                std::cout << projectPath << endl;
+
                 dfsFolder(projectPath, address);
                 m_projects.push_back(Project(projectPath, address, m_projects.size()));
             }
@@ -173,4 +205,31 @@ void Homework::dfsFolder(std::string folderPath, std::vector<std::string>& addre
 
     _findclose(Handle);
 	return;
+}
+
+bool Homework::printToFile(std::string file/* = "result.txt"*/)
+{
+    std::ofstream fout(file.c_str());
+    if (!fout.is_open())
+        return false;
+    for (int i = 0; i < m_projects.size(); i++)
+    {
+        fout << "--------------------------------------\n";
+        fout << "Project " << i << std::endl;
+        fout << "Address: " << m_path << std::endl;
+        fout << "Clashes: " << std::endl;
+
+        for (int j = 0; j < m_projects.size(); j++)
+        {
+            if (j == i) continue;
+            fout << "With Project " << j << std::endl;
+            fout << "Clashes: " << m_clashes[i][j] << std::endl;
+
+            fout << "Similarity: " << (double)m_clashes[i][j] * PATTERN_LENGTH / m_projects[i].getLength()
+                 << " / " << (double)m_clashes[i][j] * PATTERN_LENGTH / m_projects[j].getLength()
+                 << std::endl;
+        }
+    }
+    fout.close();
+    return true;
 }

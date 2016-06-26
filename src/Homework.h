@@ -3,6 +3,7 @@
 #include "Settings.h"
 #include "Project.h"
 #include "PatternTree.h"
+#include "Preprocess.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -13,9 +14,12 @@ public:
 	
 	enum HomeworkType { Single, Multiple };
 	
-	Homework(std::string path, HomeworkType type);
+    Homework(std::string path, HomeworkType type, std::string excluded,
+             Preprocess* preprocess = new SimplePreprocess());
 
     std::vector<std::vector<int>> getResult() { return m_clashes; }
+
+    bool printToFile(std::string file = "result.txt");
 
 protected:
 		
@@ -36,4 +40,8 @@ private:
     std::vector<Document::Resemblance> m_resems;
 
     std::vector<std::vector<int>> m_clashes;
+
+    std::string m_excluded;
+
+    Preprocess* m_preprocess;
 };

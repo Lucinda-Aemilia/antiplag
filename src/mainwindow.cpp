@@ -50,12 +50,12 @@ void MainWindow::on_processButton_clicked()
 
     if (m_workdir == "")
     {
-        QMessageBox::information(this, tr("Warning"), tr("Not configured yet."));
+        QMessageBox::information(this, tr("Error"), tr("Not configured yet."));
         return;
     }
 
     ui->textBrowser->setText(tr("Running..."));
-    m_curHomework = new Homework(m_workdir, m_hwType);
+    m_curHomework = new Homework(m_workdir, m_hwType, m_toIgnore);
 
     ui->textBrowser->setText(tr("Done."));
 }
@@ -64,7 +64,7 @@ void MainWindow::on_resultButton_clicked()
 {
     if (m_curHomework == NULL)
     {
-        QMessageBox::information(this, tr("Warning"), tr("No Projects is working."));
+        QMessageBox::information(this, tr("Error"), tr("No Project is at work."));
     }
     else
     {
@@ -111,4 +111,17 @@ void MainWindow::on_comboBox_currentIndexChanged(int index)
         m_hwType = Homework::Single;
     else
         m_hwType = Homework::Multiple;
+}
+
+void MainWindow::on_printButton_clicked()
+{
+    if (m_curHomework == NULL)
+        QMessageBox::information(this, tr("Error"), tr("No Project is at work."));
+    else
+    {
+        if (m_curHomework->printToFile())
+            QMessageBox::information(this, tr("Succeeded"), tr("Succeeded printed information to result.txt."));
+        else
+            QMessageBox::information(this, tr("Failed"), tr("Failed to print information to result.txt."));
+    }
 }

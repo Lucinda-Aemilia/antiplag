@@ -25,6 +25,8 @@ public:
 	/// find a set of patterns with the same hash value in the tree
 	/// Note: I cannot make it const...
 	std::vector<Pattern> find(const long long int hash);
+
+    bool erase(const long long int hash, const std::string& pattern);
 	
     /// Return a vector of patterns
 	std::vector<Pattern> getAll();

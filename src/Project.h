@@ -14,6 +14,8 @@ public:
 
     int getId() const { return m_id; }
 
+    int getLength() const { return m_length; }
+
 protected:
 
 private:
@@ -25,4 +27,6 @@ private:
     std::vector<Document::Resemblance> m_resem;
 
     int m_id; ///< The index in the Homework object.
+
+    int m_length;
 };

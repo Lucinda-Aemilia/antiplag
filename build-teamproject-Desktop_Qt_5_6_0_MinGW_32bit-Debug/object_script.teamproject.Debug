@@ -1,0 +1,12 @@
+INPUT(
+./debug\Document.o
+./debug\Homework.o
+./debug\main.o
+./debug\Pattern.o
+./debug\PatternTree.o
+./debug\Project.o
+./debug\Settings.o
+./debug\mainwindow.o
+./debug\Preprocess.o
+./debug\moc_mainwindow.o
+);

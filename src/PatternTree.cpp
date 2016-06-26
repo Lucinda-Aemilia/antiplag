@@ -33,6 +33,25 @@ std::vector<Pattern> PatternTree::find(long long int hash)
 	return patternList;
 }
 
+bool PatternTree::erase(const long long int hash, const std::string& pattern)
+{
+    while (true)
+    {
+        std::pair<patternMmap::iterator, patternMmap::iterator> p = m_tree.equal_range(hash);
+        patternMmap::iterator i;
+        for (i = p.first; i != p.second; i++)
+        {
+            if (i->second.getPattern() == pattern)
+            {
+                m_tree.erase(i);
+                break;
+            }
+        }
+        if (i == p.second)
+            break;
+    }
+}
+
 std::vector<Pattern> PatternTree::getAll()
 {
 	std::vector<Pattern> patternList;

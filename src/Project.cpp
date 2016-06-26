@@ -4,8 +4,12 @@
 Project::Project(std::string path, const std::vector<std::string>& address, int id/* = 0 */)
     : m_path(path), m_id(id)
 {
+    m_length = 0;
     for (int i = 0; i < address.size(); i++)
+    {
         m_documents.push_back(Document(address[i], i, m_id));
+        m_length += m_documents[i].getLength();
+    }
 }
 
 std::vector<Document::Resemblance> Project::doWinnow()
