@@ -23,8 +23,18 @@ private slots:
 
     void on_quitButton_clicked();
 
+    void on_configButton_clicked();
+
+    void on_comboBox_currentIndexChanged(int index);
+
 private:
+
     Ui::MainWindow *ui;
+    Homework* m_curHomework;
+
+    std::string m_workdir;
+    std::string m_toIgnore;
+    Homework::HomeworkType m_hwType;
 };
 
 #endif // MAINWINDOW_H

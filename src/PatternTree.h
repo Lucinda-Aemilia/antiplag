@@ -26,11 +26,15 @@ public:
 	/// Note: I cannot make it const...
 	std::vector<Pattern> find(const long long int hash);
 	
+    /// Return a vector of patterns
 	std::vector<Pattern> getAll();
 	
 	/// print some basic information about the tree
 	void print();
 	
+    /// Clear all patterns in the tree
+    void clearAll();
+
 private:
 
 	patternMmap m_tree;

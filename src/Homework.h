@@ -2,6 +2,7 @@
 
 #include "Settings.h"
 #include "Project.h"
+#include "PatternTree.h"
 #include <iostream>
 #include <string>
 #include <vector>
@@ -13,6 +14,8 @@ public:
 	enum HomeworkType { Single, Multiple };
 	
 	Homework(std::string path, HomeworkType type);
+
+    std::vector<std::vector<int>> getResult() { return m_clashes; }
 
 protected:
 		
@@ -29,4 +32,8 @@ private:
 	std::string m_path;
 	
 	std::vector<Project> m_projects;
+
+    std::vector<Document::Resemblance> m_resems;
+
+    std::vector<std::vector<int>> m_clashes;
 };

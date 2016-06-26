@@ -2,17 +2,17 @@
 
 // Pattern::Pattern() : m_pattern(""), m_parDocument(NULL) {}
 
-Pattern::Pattern(Document& parDocument, std::string pattern, int pos): 
-  m_parDocument(&parDocument), m_pattern(pattern), m_pos(pos), m_hash(0)
+Pattern::Pattern(std::string pattern, int pos, int id/* = 0 */, int documentId/* = 0 */,
+                 int projectId/* = 0 */):
+  m_pattern(pattern), m_pos(pos), m_hash(0), m_id(id), m_documentId(documentId), m_projectId(projectId)
 {
 	calcHash();
 }
   
 void Pattern::print() const
 {
-	#ifdef DEBUG
-	debugout << "Position=" << m_pos << " Hash=" << m_hash <<  " Content=" << m_pattern << std::endl;
-	#endif // DEBUG
+    std::cout << "Project ID: " << m_projectId << " Document Id: " << m_documentId << std::endl;
+	std::cout << "Position=" << m_pos << " Hash=" << m_hash <<  " Content=" << m_pattern << std::endl;
 }
 
 void Pattern::calcHash()

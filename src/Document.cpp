@@ -5,11 +5,13 @@
 #include <iostream>
 #include <vector>
 #include <cstring>
+#include <QDebug>
 
-Document::Document(std::string address) : m_address(address)
+Document::Document(std::string address, int id/* = 0*/, int projectId/* = 0*/) :
+    m_address(address), m_id(id), m_projectId(projectId)
 {
 	std::ifstream fin(address.c_str());
-	// std::cout << address << std::endl;
+    // std::std::cout << address << std::endl;
 	
 	// still need to handle exception here
 	try
@@ -28,33 +30,30 @@ Document::Document(std::string address) : m_address(address)
 		m_content += '\n';
 	}
 	
-	#ifdef DEBUG
-	debugout << std::endl << "********************************************************************************\n" << std::endl;
-	debugout << "Document address: " << m_address << std::endl << std::endl;
-	// std::cout << "Content before prepossing" << std::endl << m_content << std::endl;
-	#endif // DEBUG
+
+    std::cout << std::endl << "********************************************************************************\n" << std::endl;
+    std::cout << "Document address: " << m_address << std::endl << std::endl;
+    // std::std::cout << "Content before prepossing" << std::endl << m_content << std::endl;
 	
 	preprocess();
 	
-	#ifdef DEBUG
-	// std::cout << "Content after preprocessing:" << std::endl << m_content << std::endl << std::endl;
-	#endif // DEBUG
-	
 	makePattern();
-	
-	#ifdef DEBUG
-	debugout << "Patterns made:" << std::endl;
+
+    std::cout << "Patterns made:" << std::endl;
 	for (int i = 0; i < m_patterns.size(); i++)
+    {
 		m_patterns[i].print();
-	debugout << std::endl;
-	#endif // DEBUG
+        // std::cout << m_patterns[i].getParDocument()->getAddress() << std::endl;
+    }
+    std::cout << std::endl;
+
 	
 	for (int i = 0; i < m_patterns.size(); i++)
 		PatternTree::instance()->insert(m_patterns[i]);
 	
-	#ifdef DEBUG
+
 	PatternTree::instance()->print();
-	#endif // DEBUG
+
 	
 	fin.close();
 }
@@ -114,7 +113,8 @@ void Document::makePattern()
 			// !!! Please check it carefully!
 			int start_pos = (right_end - min_pos + WINDOW_LENGTH) % WINDOW_LENGTH;
 			start_pos = global_right_pos - PATTERN_LENGTH -start_pos;
-			m_patterns.push_back(Pattern((*this), m_content.substr(start_pos, PATTERN_LENGTH), start_pos));
+            m_patterns.push_back(Pattern(m_content.substr(start_pos, PATTERN_LENGTH), start_pos,
+                                         m_patterns.size(), m_id, m_projectId));
 		}
 		else
 		{
@@ -125,7 +125,8 @@ void Document::makePattern()
 			{
 				min_pos = right_end;
 				int start_pos = global_right_pos - PATTERN_LENGTH;
-				m_patterns.push_back(Pattern((*this), m_content.substr(start_pos, PATTERN_LENGTH), start_pos));
+                m_patterns.push_back(Pattern(m_content.substr(start_pos, PATTERN_LENGTH), start_pos,
+                                             m_patterns.size(), m_id, m_projectId));
 			}
 		}
 	}
@@ -151,28 +152,73 @@ bool Document::isValid(char c)
 	return false;
 }
 
+std::vector<Document::Resemblance> Document::Winnowing()
+{
+    m_resem.clear();
+    if (m_content.size() < PATTERN_LENGTH)
+        return m_resem;
+
+    std::cout << std::endl << "********************************************************************************\n" << std::endl;
+    std::cout << "Winnowing Detection algorithm" << std::endl;
+    std::cout << "File path: " << m_address << std::endl;
+
+    long long int hash = 0, pow = 1;
+    for (int j = PATTERN_LENGTH-1; j >= 0; j--)
+    {
+        hash += (int)m_content[j] * pow;
+        if (j != 0)
+            pow *= RK_BASE;
+        hash %= RK_MOD;
+        pow %= RK_MOD;
+    }
+    for (int j = 0; j < m_content.length()-PATTERN_LENGTH; j++)
+    {
+        std::vector<Pattern> clashes(PatternTree::instance()->find(hash));
+        for (int k = 0; k < clashes.size(); k++)
+        {
+            if (clashes[k].getProjectId() != m_projectId
+                    && m_content.substr(j, PATTERN_LENGTH) == clashes[k].getPattern())
+            {
+                m_resem.push_back(Resemblance(m_projectId, clashes[k].getProjectId(), m_id,
+                                              clashes[k].getDocumentId(), j, clashes[k].getPos()));
+
+                std::cout << "Find resemblance: " << std::endl;
+                m_resem.back().print();
+            }
+        }
+
+        hash -= (int)m_content[j] * pow;
+        hash *= RK_BASE;
+        hash += (int)m_content[j + PATTERN_LENGTH];
+        hash %= RK_MOD;
+        hash = (hash + RK_MOD) % RK_MOD;
+    }
+
+    return m_resem;
+}
+
 /// Perform Rabin-Karp algorithm for this document.
 void Document::RabinKarp()
 {
 	std::vector<Pattern> patternList(PatternTree::instance()->getAll());
 	
-	#ifdef DEBUG
-	debugout << std::endl << "********************************************************************************\n" << std::endl;
-	debugout << "Rabin-Karp algorithm" << std::endl;
-	debugout << "File path: " << m_address << std::endl;
+
+    std::cout << std::endl << "********************************************************************************\n" << std::endl;
+    std::cout << "Rabin-Karp algorithm" << std::endl;
+    std::cout << "File path: " << m_address << std::endl;
 	/*
 	for (int i = 0; i < patternList.size(); i++)
 		patternList[i].print();
 	*/
-	#endif //DEBUG
+
 	
 	for (int i = 0; i < patternList.size(); i++)
 	{
-		#ifdef DEBUG
-		debugout << "Checking Pattern: " << std::endl << "  ";
+
+        std::cout << "Checking Pattern: " << std::endl << "  ";
 		patternList[i].print();
-		debugout << "  Parent file: " << patternList[i].getParDocument()->getAddress() << std::endl;
-		#endif // DEBUG
+        std::cout << "  Parent file: " << patternList[i].getDocumentId() << std::endl;
+
 		
 		int length = patternList[i].getLength();
 		if (length > m_content.length()) continue;
@@ -190,10 +236,10 @@ void Document::RabinKarp()
 		{
 			if (hash == patternList[i].getHash())
 			{
-				#ifdef DEBUG
-				debugout << "  *Detected pattern in this document" << std::endl;
-				debugout << "    position: " << j << std::endl;
-				#endif // DEBUG
+
+                std::cout << "  *Detected pattern in this document" << std::endl;
+                std::cout << "    position: " << j << std::endl;
+
 			}
 			hash -= (int)m_content[j] * pow;
 			hash *= RK_BASE;
@@ -209,19 +255,19 @@ void Document::KMP()
 {
 	std::vector<Pattern> patternList(PatternTree::instance()->getAll());
 	
-	#ifdef DEBUG
-	debugout << std::endl << "********************************************************************************\n" << std::endl;
-	debugout << "KMP algorithm" << std::endl;
-	debugout << "File path: " << m_address << std::endl;
-	#endif //DEBUG
+
+    std::cout << std::endl << "********************************************************************************\n" << std::endl;
+    std::cout << "KMP algorithm" << std::endl;
+    std::cout << "File path: " << m_address << std::endl;
+
 	
 	for (int i = 0; i < patternList.size(); i++)
 	{
-		#ifdef DEBUG
-		debugout << "Checking Pattern: " << std::endl << "  ";
+
+        std::cout << "Checking Pattern: " << std::endl << "  ";
 		patternList[i].print();
-		debugout << "  Parent file: " << patternList[i].getParDocument()->getAddress() << std::endl;
-		#endif // DEBUG
+        std::cout << "  Parent file: " << patternList[i].getDocumentId() << std::endl;
+
 		
 		std::string pattern(patternList[i].getPattern());
 		int length = pattern.length();
@@ -229,7 +275,7 @@ void Document::KMP()
 		
 		char* str = new char[m_content.length()];
 		strcpy(str, m_content.c_str());
-		// debugout << str << std::endl;
+        // std::cout << str << std::endl;
 		int last = 0;
 		while (last < m_content.length())
 		{
@@ -237,10 +283,10 @@ void Document::KMP()
 			if (occ == NULL) break;
 			else
 			{
-				#ifdef DEBUG
-				debugout << "  *Detected pattern in this document" << std::endl;
-				debugout << "    position: " << (int)(occ - str) << std::endl;
-				#endif // DEBUG
+
+                std::cout << "  *Detected pattern in this document" << std::endl;
+                std::cout << "    position: " << (int)(occ - str) << std::endl;
+
 				last = occ - str + 1;
 			}
 		}

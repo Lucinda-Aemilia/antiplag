@@ -1,4 +1,0 @@
-Constructing an instance of PatternTree
-Destroying the instance of PatternTree
-Finishing up this program
-
